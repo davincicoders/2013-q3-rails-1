@@ -18,6 +18,15 @@ get "/4/6" do
   halt erb(:c)
 end
 
-get "/pipe" do
-  halt erb(:pipe)
+get "/examples/image" do
+  halt erb(:image_example)
 end
+
+get "/examples/stylesheet" do
+  halt erb(:stylesheet_example)
+end
+
+get "/examples/javascript" do
+  halt erb(:javascript_example)
+end
+
