@@ -2,9 +2,13 @@ require 'active_record'
 require 'logger'
 require 'sinatra'
 require 'yaml'
+require 'action_view' # for Rails form helpers
 
 # Enable sessions -- note that a web server restart will invalidate all cookies
 use Rack::Session::Cookie, secret: SecureRandom.hex
+
+# for Rails form helpers
+helpers ActionView::Helpers::FormTagHelper
 
 # fix ConnectionTimeoutError
 after { ActiveRecord::Base.connection.close }
