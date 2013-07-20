@@ -1,0 +1,144 @@
+html {
+  background-color: black;
+  font-family: serif;
+}
+body {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  border-left: 20px red solid;
+  border-right: 20px red solid;
+}
+a {
+  color: #800;
+}
+.whole-page {
+  position: relative;
+  padding: 30px 50px;
+}
+.logo-and-title {
+  height: 140px;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  background-image: url('Coders-Logo-Trans-150x.png');
+  text-indent: -999px;
+  position: absolute;
+  top: 20px;
+}
+h1.title {
+  font-family: 'Libre Baskerville', 'Times New Roman Bold', serif;
+  position: absolute;
+  left: 240px;
+  top: 65px;
+  font-size: 65pt;
+  letter-spacing: -2px;
+}
+.nav {
+  position: relative;
+  height: 47px;
+}
+.nav-element {
+  font-size: 20pt;
+  position: absolute;
+  background-color: #eee;
+  padding: 10px 20px;
+  text-align: center;
+}
+.nav1 {
+  left: 110px;
+}
+.nav2 {
+  left: 280px;
+}
+.nav3 {
+  left: 470px;
+}
+.nav4 {
+  left: 680px;
+}
+.nav-selected {
+  background-color: white;
+  border-top:   1px black solid;
+  border-left:  1px black solid;
+  border-right: 1px black solid;
+}
+.content {
+  border-top: 1px black solid;
+  padding: 54px;
+}
+table {
+  margin: 0 auto;
+}
+th, td {
+  font-size: 20pt;
+  text-align: left;
+  padding-bottom: 25px;
+}
+th {
+  text-transform: uppercase;
+  font-size: 14pt;
+  letter-spacing: 3px;
+  padding-top: 10px;
+}
+.student-name {
+  width: 300px;
+}
+.site-name {
+  width: 500px;
+}
+.term {
+  width: 250px;
+  text-align: right;
+}
+p, ul li {
+  margin: 0 110px;
+  font-size: 16pt;
+  line-height: 28pt;
+  text-align: justify;
+}
+ul {
+  margin-top: 20px;
+}
+ul li {
+  list-style-type: circle;
+  padding-left: 14px; 
+  list-style-position: inside;
+  margin-top: 10px;
+}
+form {
+  font-size: 16pt;
+  margin-left: 190px;
+}
+.form-field {
+  position: relative;
+  padding-bottom: 30px;
+}
+.form-field input,
+.form-field textarea {
+  position: absolute;
+  left: 140px;
+  width: 300px;
+}
+.form-field-message {
+  height: 130px;
+}
+.required {
+  position: absolute;
+  top: 4px;
+  left: 460px;
+}
+h2 {
+  padding-left: 180px;
+  padding-bottom: 30px;
+  font-size: 30px;
+  font-family: 'Libre Baskerville', 'Times New Roman Bold', serif;
+}
+.footer {
+  margin-left: 50px;
+  font-size: 15pt;
+  text-align: center;
+  line-height: 18pt;
+}
