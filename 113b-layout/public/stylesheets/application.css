@@ -1,0 +1,10 @@
+.nav {
+  text-align: center;
+}
+.nav-element {
+  font-size: 20pt;
+  background-color: #eee;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+}
