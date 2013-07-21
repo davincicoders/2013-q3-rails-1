@@ -100,8 +100,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack
   activerecord (~> 3.2)
   activerecord-postgresql-adapter
+  erubis
   pry-debugger
   pry-doc
   sinatra
