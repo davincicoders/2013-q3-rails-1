@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+    <title><%= @title %></title>
+  </head>
+  <body>
+    <div class='nav'>
+      <div class='nav-element nav1'>
+        <% if @title == "Home" %>
+          Home
+        <% else %>
+          <a href='/'>Home</a>
+        <% end %>
+      </div>
+      <div class='nav-element nav2'>
+        <% if @title == "About Us" %>
+          About Us
+        <% else %>
+          <a href='/about-us'>About Us</a>
+        <% end %>
+      </div>
+      <div class='nav-element nav3'>
+        <% if @title == "Contact Us" %>
+          Contact Us
+        <% else %>
+          <a href='/contact-us'>Contact Us</a>
+        <% end %>
+      </div>
+    </div>
+
+    <h1><%= @title %></h1>
+
+    <%== yield %>
+
+    <hr>
+    <p>(C) 2013 Your Name Here.  All rights reserved.</p>
+  </body>
+</html>
