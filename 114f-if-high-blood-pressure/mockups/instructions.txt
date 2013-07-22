@@ -1,0 +1,9 @@
+Systolic:
+- below 20 is normal
+- 120-139 is borderline high blood pressure
+- 140+ is high blood pressure
+
+Diastolic:
+- under 80 is normal
+- 80 to 89 is borderline high blood pressure
+- 90 or higher is high blood pressure
