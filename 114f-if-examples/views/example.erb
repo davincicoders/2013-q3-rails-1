@@ -1,0 +1,56 @@
+<p>
+  Temperature:
+  <b><%= @temperature %></b>
+  <% if @temperature > 40 %>
+    <span style='color:red'>Warning: unsafe temperature reading</span>
+  <% end %>
+</p>
+
+<p>
+  Code:
+  <% if @code != nil %>
+    <b><%= @code %></b>
+  <% else %>
+    <i>(none assigned)</i>
+  <% end %>
+</p>
+
+<p>
+  Test results:
+  <% if @test_passed == true %>
+    <span style='color:green'>PASSED</span>
+  <% else %>
+    <span style='color:red'>FAILED</span>
+  <% end %>
+</p>
+
+<p>
+  Operating system:<br>
+
+  <% if @operating_system == "Mac" %>
+    [X] Mac
+  <% else %>
+    [ ] Mac
+  <% end %>
+  <br>
+
+  <% if @operating_system == "Windows" %>
+    [X] Windows
+  <% else %>
+    [ ] Windows
+  <% end %>
+  <br>
+
+  <% if @operating_system == "Linux" %>
+    [X] Linux
+  <% else %>
+    [ ] Linux
+  <% end %>
+  <br>
+
+  <% if @operating_system == "Other" %>
+    [X] Other: <%= @operating_system_other %>
+  <% else %>
+    [ ] Other
+  <% end %>
+</p>
