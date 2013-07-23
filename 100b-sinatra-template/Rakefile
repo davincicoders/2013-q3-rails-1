@@ -12,7 +12,9 @@ module StandaloneMigrations
   end
 end
 
-StandaloneMigrations::Tasks.load_tasks
+if File.exists?('db')
+  StandaloneMigrations::Tasks.load_tasks
+end
 
 desc "Run a Pry session with models from Sinatra app specified by config.ru"
 task :console do
