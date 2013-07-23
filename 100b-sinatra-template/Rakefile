@@ -14,6 +14,9 @@ end
 
 if File.exists?('db')
   StandaloneMigrations::Tasks.load_tasks
+
+  # Load models from models directory, like Rails (for db:seed task)
+  Dir['./models/*.rb'].each { |file| require file }
 end
 
 desc "Run a Pry session with models from Sinatra app specified by config.ru"
