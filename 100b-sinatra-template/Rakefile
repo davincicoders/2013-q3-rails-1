@@ -62,3 +62,33 @@ task :routes do
 
   routes.each { |route| puts route }
 end
+
+namespace :db do
+  desc "Show tables' data in the database specified by config/database.yml"
+  task :dump do
+    require '../dvc-sinatra'
+    ActiveRecord::Base.logger = nil # turn off SQL logging
+
+    sql = "select tablename from pg_tables where schemaname = 'public'"
+    rows = ActiveRecord::Base.connection.execute(sql)
+    rows.each do |row|
+      table_name = row['tablename']
+      puts "#{'_' * 25} #{table_name} table #{'_' * (42 - table_name.size)}"
+      sql = "select * from #{table_name};"
+      rows2 = ActiveRecord::Base.connection.execute(sql)
+      if rows2.first
+        keys = rows2.first.keys
+        longest_key_length = keys.collect { |key| key.size }.max
+        rows2.each_with_index do |row2, i|
+          puts '-' * 75 unless i == 0 # separation between rows
+          keys.each do |key|
+            value = row2[key]
+            value = 'NULL' if value.nil?
+            puts sprintf("%#{longest_key_length}s: %s", key, value)
+          end
+        end
+      end
+    end
+    puts '_' * 75
+  end
+end
