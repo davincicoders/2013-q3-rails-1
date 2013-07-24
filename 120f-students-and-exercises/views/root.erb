@@ -1,0 +1,9 @@
+<ul>
+  <% @students.each do |student| %>
+    <li><%= student.first_name %> <%= student.last_name %><ul>
+    <% @exercises.each do |exercise| %>
+      <li><%= exercise.directory %></li>
+    <% end %>
+    </ul></li>
+  <% end %>
+</ul>
