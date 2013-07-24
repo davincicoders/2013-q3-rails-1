@@ -1,0 +1,32 @@
+<h1>Patients</h1>
+
+<table border="1">
+  <tr>
+    <th>#</th>
+    <th>Systolic</th>
+    <th>Diastolic</th>
+  </tr>
+  <% @patients.each do |patient| %>
+    <tr>
+      <td><%= patient.id %></td>
+      <td>
+        <% if patient.systolic >= 140 %>
+          <span style='color:red'><%= patient.systolic %></span>
+        <% elsif patient.systolic >= 120 %>
+          <span style='color:yellow'><%= patient.systolic %></span>
+        <% else %>
+          <span style='color:green'><%= patient.systolic %></span>
+        <% end %>
+      </td>
+      <td>
+        <% if patient.diastolic >= 90 %>
+          <span style='color:red'><%= patient.diastolic %></span>
+        <% elsif patient.diastolic >= 80 %>
+          <span style='color:yellow'><%= patient.diastolic %></span>
+        <% else %>
+          <span style='color:green'><%= patient.diastolic %></span>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
