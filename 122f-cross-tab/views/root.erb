@@ -1,0 +1,18 @@
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <% @exercises.each do |exercise| %>
+      <th>Grade for <%= exercise.directory %></th>
+    <% end %>
+  </tr>
+  <% @students.each do |student| %>
+    <tr>
+      <th><%= student.first_name %> <%= student.last_name %></th>
+      <% @exercises.each do |exercise| %>
+        <td>
+          (<%= student.first_name %>'s grade for <%= exercise.directory %>)
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

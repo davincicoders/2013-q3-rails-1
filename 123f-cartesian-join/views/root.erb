@@ -1,0 +1,7 @@
+<ul>
+  <% @students.each do |student| %>
+    <% @exercises.each do |exercise| %>
+      <li><%= student.first_name %>'s grade on <%= exercise.directory %></li>
+    <% end %>
+  <% end %>
+</ul>

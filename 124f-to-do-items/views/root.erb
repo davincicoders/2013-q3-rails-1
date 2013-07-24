@@ -1,0 +1,10 @@
+<% @todos.each do |todo| %>
+  <% if todo.is_completed %>
+    <input type="checkbox" checked="checked">
+  <% else %>
+    <input type="checkbox">
+  <% end %>
+
+  <%= todo.description %>
+  <br>
+<% end %>
