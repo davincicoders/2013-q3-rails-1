@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+
+<h1>List of apartments</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Address</th>
+    <th>Rent</th>
+    <th></th>
+  </tr>
+  <% @apartments.each do |apartment| %>
+    <tr>
+      <td><%= apartment.id %></td>
+      <td><%= apartment.address %></td>
+      <td class='money'>
+        $<%= apartment.rent_per_month %>.00
+      </td>
+      <td>
+        <a href="/apartments/<%= apartment.id %>">More...</a>
+      </td>
+    </tr>
+  <% end %>
+</table>

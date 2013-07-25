@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+
+<h1>Apartment #<%= @apartment.id %></h1>
+
+<p>
+  <b>ID</b><br>
+  <%= @apartment.id %>
+</p>
+<p>
+  <b>Address</b><br>
+  <%= @apartment.address %>
+</p>
+<p>
+  <b>Rent</b><br>
+  $<%= @apartment.rent_per_month %>.00
+</p>
+<p>
+  <b>Allows pets</b><br>
+  <% if @apartment.does_allow_pets != nil %>
+    <%= @apartment.does_allow_pets %>
+  <% else %>
+    Unknown
+  <% end %>
+</p>
+<p>
+  <b>URL</b><br>
+  <a href="<%= @apartment.url %>"><%= @apartment.url %></a>
+</p>
