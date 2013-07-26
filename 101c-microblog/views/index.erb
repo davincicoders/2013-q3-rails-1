@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1>Example microblog</h1>
+
+    <ul>
+      <% for post in @posts %>
+        <li>
+          By <%= post.author %> at <%= post.created_at %>: <%= post.content %>
+        </li>
+      <% end %>
+    </ul>
+
+    <a href="/new">Write new post</a>
+  </body>
+</html>
