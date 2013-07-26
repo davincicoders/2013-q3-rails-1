@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>City name</th>
+    <td><%= @city.name %></td>
+  </tr>
+  <tr>
+    <th>Country</th>
+    <td><%= @city.country %></td>
+  </tr>
+  <tr>
+    <th>Time zone offset</th>
+    <td>
+      <% if @city.time_zone_offset >= 0 %>
+        GMT+<%= @city.time_zone_offset %>
+      <% else %>
+        GMT<%= @city.time_zone_offset %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>Population (in millions)</th>
+    <td><%= @city.population_in_millions %></td>
+  </tr>
+</table>

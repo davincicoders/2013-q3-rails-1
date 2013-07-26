@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th></th>
+    <% @colors.each do |color| %>
+      <th><%= color.name %></th>
+    <% end %>
+  </tr>
+  <% @vehicles.each do |vehicle| %>
+    <tr>
+      <th><%= vehicle.name %></td>
+      <% @colors.each do |color| %>
+        <td style="background-color:<%= color.html_color_code %>">
+          <a href="/<%= color.id %>/<%= vehicle.id %>">
+            <img src="/images/<%= vehicle.image_filename %>">
+          </a>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

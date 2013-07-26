@@ -1,0 +1,15 @@
+<h1>World cities</h1>
+
+<table>
+  <% @cities.each do |city| %>
+    <tr>
+      <td><%= city.name %>, <%= city.country %></td>
+      <td>
+        <img src="/images/<%= city.country_flag_filename %>">
+      </td>
+      <td>
+        <a href="/cities/<%= city.id %>">Details</a>
+      </td>
+    </tr>
+  <% end %>
+</table>
