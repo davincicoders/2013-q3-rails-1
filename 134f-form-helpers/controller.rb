@@ -1,7 +1,6 @@
 require '../dvc-sinatra.rb'
 
 get "/" do
-  @email = Email.new
   halt erb(:root)
 end
 

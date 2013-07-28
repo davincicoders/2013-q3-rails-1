@@ -1,10 +1,10 @@
 <h1>Contact Us</h1>
 
 <h2>Subject</h2>
-<%== text_field_tag :subject, @email.subject %>
+<%== text_field_tag :subject, "Call me", size: 40 %>
 
 <h2>Body</h2>
-<%== text_area_tag :body, @email.body %>
+<%== text_area_tag :body, "Please call me ASAP", rows: 3, cols: 40 %>
 
 <p>
   <%== submit_tag "Send" %>
