@@ -1,0 +1,19 @@
+<h1>Patients</h1>
+
+<table border="1">
+  <tr>
+    <th>#</th>
+    <th>Systolic</th>
+    <th>Diastolic</th>
+  </tr>
+  <% @patients.each do |patient| %>
+    <tr>
+      <td><%= patient.id %></td>
+      <td><%= patient.systolic %></td>
+      <td><%= patient.diastolic %></td>
+      <td>
+        <a href="/patients/<%= patient.id %>">Edit</a>
+      </td>
+    </tr>
+  <% end %>
+</table>
