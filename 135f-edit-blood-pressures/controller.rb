@@ -15,5 +15,5 @@ post "/patients/:id" do
   @patient.systolic  = params[:systolic]
   @patient.diastolic = params[:diastolic]
   @patient.save!
-  redirect "/patients/#{@patient.id}"
+  redirect "/"
 end
