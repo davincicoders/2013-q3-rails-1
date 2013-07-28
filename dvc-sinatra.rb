@@ -14,6 +14,13 @@ use Rack::Session::Cookie, secret: SecureRandom.hex
 # for Rails form helpers
 helpers ActionView::Helpers::FormTagHelper
 
+# avoid error message that we get from using Rails form helpers with Sinatra
+helpers do
+  def protect_against_forgery?
+    false
+  end
+end
+
 # Comment this line to turn off Active Record SQL logging
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
