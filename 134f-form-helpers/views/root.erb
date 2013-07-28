@@ -1,0 +1,11 @@
+<h1>Contact Us</h1>
+
+<h2>Subject</h2>
+<%== text_field_tag :subject, @email.subject %>
+
+<h2>Body</h2>
+<%== text_area_tag :body, @email.body %>
+
+<p>
+  <%== submit_tag "Send" %>
+</p>
