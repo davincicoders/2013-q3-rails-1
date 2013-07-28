@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+
+<h1>Apartments</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Address</th>
+    <th>Rent</th>
+    <th>Pets?</th>
+    <th>Link</th>
+  </tr>
+  <% @apartments.each do |apartment| %>
+    <tr>
+      <td><%= apartment.id %></td>
+      <td><%= apartment.address %></td>
+      <td><%= apartment.rent_per_month %></td>
+      <td><%= apartment.does_allow_pets %></td>
+      <td><a href="<%= apartment.url %>"><%= apartment.url %></a></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td>(new)</td>
+    <td><%== text_field_tag :address, "", size: 30 %></td>
+    <td><%== text_field_tag :rent_per_month, "" %></td>
+    <td><%== text_field_tag :does_allow_pets, "" %></td>
+    <td><%== text_field_tag :url, "", size: 80 %></td>
+    <td><%== submit_tag "Create" %></td>
+  </tr>
+</table>
