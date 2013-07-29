@@ -1,0 +1,20 @@
+<h1>Customize your bracelet</h1>
+
+<h2>Preview</h2>
+
+<div style='border:1px black solid; text-align:center; width:500px'>
+  <% @bracelet_lines.each do |line| %>
+    <div style='font-size:<%= line.font_size %>pt'>
+      <%= line.text %>
+    </div>
+  <% end %>
+</div>
+
+<ul>
+  <li>
+    <a href="/line1">Edit line 1</a>
+  </li>
+  <li>
+    <a href="/line2">Edit line 2</a>
+  </li>
+</ul>
