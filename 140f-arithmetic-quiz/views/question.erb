@@ -1,0 +1,22 @@
+<h1>Question #<%= @question_num %></h1>
+
+<p><%= @question %></p>
+
+<p>
+  <%== radio_button_tag :answer, :a %>
+  <%= @answer_a %>
+</p>
+
+<p>
+  <%== radio_button_tag :answer, :b %>
+  <%= @answer_b %>
+</p>
+
+<p>
+  <%== radio_button_tag :answer, :c %>
+  <%= @answer_c %>
+</p>
+
+<p>
+  <%== submit_tag "Submit answer" %>
+</p>
