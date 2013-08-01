@@ -94,6 +94,7 @@
     var button = document.createElement('input');
     button.type = 'button';
     button.value = 'Label form params';
+    button.setAttribute('style', 'float:right;');
     button.onclick = load;
     document.body.appendChild(button);
   }
