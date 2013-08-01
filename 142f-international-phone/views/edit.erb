@@ -1,0 +1,40 @@
+<h1>Edit phone number</h1>
+
+<p>
+  Phone type:
+  <br>
+  <%== radio_button_tag :phone_type, "H", @phone.phone_type == "H" %>
+  Home
+  <%== radio_button_tag :phone_type, "C", @phone.phone_type == "C" %>
+  Cellular
+  <%== radio_button_tag :phone_type, "W", @phone.phone_type == "W" %>
+  Work
+</p>
+
+<p>
+  Phone number:
+  <br>
+  <%== text_field_tag :number, @phone.number %>
+</p>
+
+<p>
+  Country code:
+  <br>
+  <%== select_tag :country_code,
+    options_for_select([
+      ["1 - United States", "US"],
+      ["61 - Australia",    "AU"],
+      ["91 - India",        "IN"]
+    ], @phone.country_code),
+    prompt: "Choose one..." %>
+</p>
+
+<p>
+  Has voice mail:
+  <br>
+  <%== check_box_tag :has_voice_mail, "on", @phone.has_voice_mail %>
+</p>
+
+<p>
+  <%== submit_tag "Update" %>
+</p>
