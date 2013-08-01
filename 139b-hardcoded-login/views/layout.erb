@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% if @title %>
+      <title><%= @title %></title>
+    <% end %>
+    <script src="/javascripts/add-param-labels.js"></script>
+  </head>
+  <body>
+    <%# non-block form is needed to adapt Rails form helpers to Sinatra %>
+    <%# request.path_info means POST action should be same as the GET URL %>
+    <%== form_tag request.path_info %>
+      <%== yield %>
+    </form>
+  </body>
+</html>
