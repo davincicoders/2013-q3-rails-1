@@ -1,0 +1,28 @@
+<% if @error %>
+  <b>Error: <%= @error %></b>
+<% end %>
+
+<h1>Login</h1>
+
+<p>
+  Username
+  <br>
+  <%== text_field_tag :username, @old_username %>
+</p>
+
+<p>
+  Password
+  <br>
+  <%== password_field_tag :password, "" %>
+</p>
+
+<p>
+  <%== check_box_tag :login_as_guest, "on" %>
+  Login as guest
+</p>
+
+<p>
+  <%== submit_tag "Login" %>
+</p>
+
+<p>(Username is amy, password is 123)</p>
