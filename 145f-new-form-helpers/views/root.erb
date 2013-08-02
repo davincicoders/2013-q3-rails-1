@@ -1,0 +1,38 @@
+First name<br>
+<%== text_field_tag :first_name, "Abe" %>
+<hr>
+
+Biography<br>
+<%== text_area_tag :biography, "As a young boy, Abe lived in a log cabin." %>
+<hr>
+
+Deceased<br>
+<%== check_box_tag :is_deceased, "on", true %>
+<hr>
+
+Party<br>
+<%== radio_button_tag :party, "democrat", false %>
+Democrat
+<%== radio_button_tag :party, "republican", true %>
+Republican
+<%== radio_button_tag :party, "whig", false %>
+Whig
+<hr>
+
+Highest office held<br>
+<%== select_tag :office,
+  options_for_select([
+    ["President", "P"],
+    ["Vice President", "VP"],
+    ["Speaker of the House", "SH"],
+  ], "P"),
+  prompt: "Choose office" %>
+<hr>
+
+Occupation before politics<br>
+<%== select_tag :occupation,
+  options_from_collection_for_select(@occupations, :id, :name, 1),
+  prompt: "Choose occupation" %>
+<hr>
+
+<%== submit_tag "Revise history" %>
