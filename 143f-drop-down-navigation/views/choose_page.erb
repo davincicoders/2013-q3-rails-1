@@ -1,0 +1,11 @@
+<h1>Choose page to visit:</h1>
+
+<p>
+  <%== select_tag :chosen_page, options_for_select([
+    ["Page 1", "/page1"], ["Page 2", "/page2"]], nil),
+    prompt: "Choose a page..." %>
+</p>
+
+<p>
+  <%== submit_tag "Go" %>
+</p>
