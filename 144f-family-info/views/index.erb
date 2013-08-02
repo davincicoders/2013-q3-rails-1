@@ -1,0 +1,51 @@
+<h1>Enter household information</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Relation to filer</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Date of birth</th>
+    <th>Gender</th>
+    <th>Is dependent</th>
+    <th></th>
+  </tr>
+  <% @persons.each do |person| %>
+    <tr>
+      <td><%= person.id %></td>
+      <td><%= person.relation_to_filer %></td>
+      <td><%= person.first_name %></td>
+      <td><%= person.last_name %></td>
+      <td><%= person.date_of_birth %></td>
+      <td><%= person.gender %></td>
+      <td><%= person.is_dependent %></td>
+      <td></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td></td>
+    <td>
+      <%== select_tag :relation_to_filer_new, options_for_select([
+        ["Self",   "self"],
+        ["Spouse", "spouse"],
+        ["Child",  "child"],
+        ["Other",  "other"]], nil), prompt: "Relation to filer..." %>
+    </td>
+    <td><%== text_field_tag :first_name_new,    "" %></td>
+    <td><%== text_field_tag :last_name_new,     "" %></td>
+    <td><%== text_field_tag :date_of_birth_new, "" %></td>
+    <td>
+      <%== radio_button_tag :gender_new, :male, false %>
+      Male
+      <%== radio_button_tag :gender_new, :female, false %>
+      Female
+    </td>
+    <td>
+      <%== check_box_tag :is_dependent_new, "on" %>
+    </td>
+    <td>
+      <%== submit_tag "Add" %>
+    </td>
+  </tr>
+</table>
