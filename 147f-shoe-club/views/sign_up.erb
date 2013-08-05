@@ -1,0 +1,15 @@
+<%== error_messages_for @customer %>
+
+<h1>Page 1 of 4: Sign up</h1>
+
+<h3>First name</h3>
+<%== text_field_tag :first_name, @customer.first_name %>
+
+<h3>Last name</h3>
+<%== text_field_tag :last_name, @customer.first_name %>
+
+<p>
+  <%== submit_tag "Go back" %>
+  or
+  <%== submit_tag "Continue" %>
+</p>

@@ -1,0 +1,42 @@
+<h1>Page 4 of 4: Review</h1>
+
+<h2>Name</h2>
+<p>
+  <%= @customer.first_name %>
+  <%= @customer.last_name %>
+</p>
+
+<h2>Shipping speed</h2>
+<p>
+  <% if @customer.ship_speed == "ground" %>
+    Ground
+  <% elsif @customer.ship_speed == "next_day" %>
+    Next Day
+  <% end %>
+</p>
+
+<h2>Shipping address</h2>
+<p>
+  <%= @customer.ship_address1 %>
+  <br>
+  <%= @customer.ship_city %>,
+  <%= @customer.ship_state %>
+  <%= @customer.ship_zip_code %>
+</p>
+
+<h2>Billing address</h2>
+<p>
+  <%= @customer.bill_address1 %>
+  <br>
+  <%= @customer.bill_city %>,
+  <%= @customer.bill_state %>
+  <%= @customer.bill_zip_code %>
+</p>
+
+<p>
+  <%== submit_tag "Go back" %>
+  or
+  <%== submit_tag "Start over" %>
+  or
+  <%== submit_tag "Place order" %>
+</p>

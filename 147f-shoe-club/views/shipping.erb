@@ -1,0 +1,38 @@
+<%== error_messages_for @customer %>
+
+<h1>Page 2 of 4: Shipping</h1>
+
+<h2>Choose shipping speed</h2>
+
+<%== radio_button_tag :ship_speed, :ground, @customer.ship_speed == "ground" %>
+Ground
+<br>
+
+<%== radio_button_tag :ship_speed, :next_day, @customer.ship_speed == "next_day" %>
+Next Day
+
+<h2>Enter shipping address</h2>
+
+Address1<br>
+<%== text_field_tag :address1, @customer.ship_address1 %>
+<br>
+
+City<br>
+<%== text_field_tag :city, @customer.ship_city %>
+<br>
+
+State<br>
+<%== select_tag :state, options_from_collection_for_select(
+  @u_s_states, :abbreviation, :name, @customer.ship_state),
+  prompt: "" %>
+<br>
+
+ZIP code<br>
+<%== text_field_tag :zip_code, @customer.ship_zip_code, size: 5, maxlen: 5 %>
+<br>
+
+<p>
+  <%== submit_tag "Go back" %>
+  or
+  <%== submit_tag "Continue" %>
+</p>
