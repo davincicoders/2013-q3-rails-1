@@ -44,7 +44,7 @@ post "/shipping" do
   elsif params[:commit] == "Continue"
     if params[:ship_speed] == nil
       @customer.ship_speed = "" # just so validation fails
-    else params[:ship_speed]
+    else
       @customer.ship_speed = params[:ship_speed]
     end
     @customer.ship_address1  = params[:address1]
