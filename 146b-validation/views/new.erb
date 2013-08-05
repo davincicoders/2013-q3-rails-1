@@ -1,0 +1,19 @@
+<%== error_messages_for @user %>
+
+<h1>Register new user</h1>
+
+<form method="post" action="/users">
+  <p>
+    Username<br>
+    <input type="text" name="username" value="<%= @user.username %>">
+  </p>
+  
+  <p>
+    Password<br>
+    <input type="password" name="password">
+  </p>
+  
+  <p>
+    <button>Register User</button>
+  </p>
+</form>
