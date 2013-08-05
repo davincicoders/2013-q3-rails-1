@@ -15,9 +15,11 @@ get "/users/new" do
 end
 
 post "/users/new" do
-  @user = User.new
-  @user.username = params["username"]
-  @user.password = params["password"]
+  @user                = User.new
+  @user.username       = params[:username]
+  @user.password       = params[:password]
+  @user.age            = params[:age]
+
   if @user.save
     redirect "/users"
   else
