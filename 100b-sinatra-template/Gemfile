@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'pry-debugger', group: :development
 gem 'pry-doc', group: :development
 
-gem 'activerecord', '~> 3.2'
+gem 'activerecord', '~> 3.2', require: 'active_record'
 gem 'activerecord-postgresql-adapter'
 
 gem 'standalone_migrations',
@@ -11,4 +11,5 @@ gem 'standalone_migrations',
 
 gem 'sinatra'
 gem 'erubis' # for automatic escaping of HTML
-gem 'actionpack' # for Rails form helpers
+gem 'actionpack', require: 'action_view' # for Rails form helpers
+gem 'dynamic_form' # for error_messages_for

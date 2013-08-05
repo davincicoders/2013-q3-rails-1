@@ -14,6 +14,7 @@ use Rack::Session::Cookie, secret: SecureRandom.hex
 # for Rails form helpers
 helpers ActionView::Helpers::FormTagHelper
 helpers ActionView::Helpers::FormOptionsHelper
+helpers ActionView::Helpers::DynamicForm if defined? ActionView::Helpers::DynamicForm
 
 # avoid error message that we get from using Rails form helpers with Sinatra
 helpers do
