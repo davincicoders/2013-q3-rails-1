@@ -1,0 +1,44 @@
+<h1>Denver B-cycle stations</h1>
+
+<div style='float:right; border:1px black solid; width:300px'>
+  Show only:
+  <ul>
+    <li>
+      <a href="/planned">
+        Planned stations
+      </a>
+    </li>
+    <li>
+      <a href="/existing">
+        Existing stations
+      </a>
+    </li>
+    <li>
+      <a href="/zip/80205">
+        Stations in zip code 80205
+      </a>
+    </li>
+    <li>
+      <a href="/zip/80209">
+        Stations in zip code 80209
+      </a>
+    </li>
+  </ul>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Docks</th>
+    <th>Status</th>
+  </tr>
+  <% @stations.each do |station| %>
+    <tr>
+      <td><%= station.station_name %></td>
+      <td><%= station.num_docks    %></td>
+      <td><%= station.status       %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%== will_paginate @stations %>
