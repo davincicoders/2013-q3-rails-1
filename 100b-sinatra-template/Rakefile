@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.require
 
 require 'standalone_migrations'
+require 'will_paginate/active_record' if defined? WillPaginate
 
 # Use config/database.yml instead of db/config.yml for db connection config
 module StandaloneMigrations

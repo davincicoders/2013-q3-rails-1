@@ -4,6 +4,7 @@ require 'sinatra'
 require 'yaml'
 require 'action_view' # for Rails form helpers
 require 'erubis' # for escaping of HTML
+require 'will_paginate/active_record' if defined? WillPaginate
 
 # Escape HTML
 set :erb, escape_html: true
