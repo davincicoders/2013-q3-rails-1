@@ -1,0 +1,61 @@
+<p>1. Print out the names of the atomic elements in alphabetical order.</p>
+
+<ul>
+  <% Element.order("name").each do |element| %>
+    <li><%= element.name %></li>
+  <% end %>
+</ul>
+
+<p>2. Print out the name for the element with number of 27.</p>
+
+<%= Element.where(number: 27).first.name %>
+
+<p>3. Print the name of the element with the lowest melting point.</p>
+
+<%= Element.order(:melting_point).first.name %>
+
+<p>4. Print the name of the element with the highest melting point. Hint: you'll need to filter out the NULL records with <code>where("melting_point is not null")</code>.</p>
+
+<%= Element.where("melting_point is not null").order("melting_point desc").first.name %>
+
+<p>5. Print out all the element names that end with the letters ium.  (e.g. Calcium)</p>
+
+<ul>
+  <% Element.where("name like ?", "%ium").each do |element| %>
+    <li><%= element.name %></li>
+  <% end %>
+</ul>
+
+<p>6. Print out the name and number for each of the noble gases.  Look in the <code>category</code> field to find the noble gases.</p>
+
+<ul>
+  <% Element.where(category: "noble gasses").each do |element| %>
+    <li><%= element.name %>, <%= element.number %></li>
+  <% end %>
+</ul>
+
+<p>7. Print out the symbols for the alkali metals, sorted alphabetically.  Look in the <code>category</code> field to find the alkali metals.</p>
+
+<ul>
+  <% Element.where(category: "alkali metals").each do |element| %>
+    <li><%= element.symbol %></li>
+  <% end %>
+</ul>
+
+<p>8. Print out element names with atomic number of 10 or below.  Example less-than method call: <code>where("year < 1998")</code></p>
+
+<ul>
+  <% Element.where("number <= 10").each do |element| %>
+    <li><%= element.name %></li>
+  <% end %>
+</ul>
+
+<p>9. After the user enters a name of an element in the text box below and clicks Find, print the number of the element on the resulting POST page.</p>
+
+<%== text_field_tag :name_of_element %>
+<%== submit_tag "Find" %>
+
+<p>10. After the user enters a number of an element in the text box below and clicks Find, print the name of the element on the resulting POST page.</p>
+
+<%== text_field_tag :number_of_element %>
+<%== submit_tag "Find" %>
