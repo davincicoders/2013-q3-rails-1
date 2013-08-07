@@ -1,0 +1,26 @@
+<% if params[:model] != nil %>
+  <h1>Showing only iPhone <%= params[:model] %></h1>
+<% else %>
+  <h1>Showing all models</h1>
+<% end %>
+
+<% if params[:gigs] != nil %>
+  <h1>Showing only phones with <%= params[:gigs] %> GB of memory</h1>
+<% else %>
+  <h1>Showing phones with all amounts of memory</h1>
+<% end %>
+
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Gigs</th>
+    <th>Price</th>
+  </tr>
+  <% @listings.each do |listing| %>
+    <tr>
+      <td><%= listing.model %></td>
+      <td><%= listing.gigs %></td>
+      <td>$<%= sprintf("%.2f", listing.price) %></td>
+    </tr>
+  <% end %>
+</table>
