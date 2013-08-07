@@ -1,0 +1,11 @@
+<h1>Encyclopedia entries</h1>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <a href="/entries/<%= entry.id %>">
+        <%= entry.word %>
+      </a>
+    </li>
+  <% end %>
+</ul>
