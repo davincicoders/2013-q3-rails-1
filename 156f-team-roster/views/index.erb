@@ -1,0 +1,21 @@
+<h1>Team members</h1>
+
+<ul>
+  <% @people.each do |person| %>
+    <li><%= person.name %></li>
+  <% end %>
+
+  <li>
+    <%== text_field_tag :new_name_1, "" %>
+  </li>
+
+  <li>
+    <%== text_field_tag :new_name_2, "" %>
+  </li>
+
+  <li>
+    <%== text_field_tag :new_name_3, "" %>
+  </li>
+</ul>
+
+<%== submit_tag "Add" %>

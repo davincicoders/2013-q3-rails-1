@@ -1,0 +1,10 @@
+<h1>Alumni</h1>
+
+<% @years.each do |year| %>
+  <h2><%= year %></h2>
+  
+  <% Alum.where(class_year: year).each do |alum| %>
+    <%= alum.first_name %> <%= alum.last_name %>
+    <br>
+  <% end %>
+<% end %>

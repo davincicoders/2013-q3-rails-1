@@ -1,0 +1,25 @@
+<style>
+  th { text-align: left; }
+  th, td { padding: 0 5px; }
+</style>
+
+<h1><%= @header %></h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Published</th>
+  </tr>
+  <% @books.each do |book| %>
+    <tr>
+      <td>
+        <a href="/isbn/<%= book.isbn %>">
+          <%= book.title %>
+        </a>
+      </td>
+      <td><%= book.author %></td>
+      <td><%= book.publication_year %></td>
+    </tr>
+  <% end %>
+</table>

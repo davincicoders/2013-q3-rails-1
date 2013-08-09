@@ -1,0 +1,36 @@
+<% if @error %>
+  Error: <%= @error %>
+<% end %>
+
+<table border="1">
+  <tr>
+    <th></th>
+    <% @cols.each do |col| %>
+      <th><%= col %></th>
+    <% end %>
+  </tr>
+  <% @rows.each do |row| %>
+    <tr>
+      <th><%= row %></th>
+      <% @cols.each do |col| %>
+        <td>
+          <% guess = Guess.where(row: row, col: col).first %>
+          <% if guess != nil %>
+            <% if guess.was_hit %>
+              HIT
+            <% else %>
+              MISS
+            <% end %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+Row: <%== select_tag :row, options_for_select(@rows), prompt: "" %>
+<br>
+Col: <%== select_tag :col, options_for_select(@cols), prompt: "" %>
+<br>
+<%== submit_tag "Guess" %>

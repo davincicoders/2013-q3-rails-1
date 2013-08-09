@@ -1,0 +1,22 @@
+<h1>Alumni</h1>
+
+<h2>1952</h2>
+
+<% Alum.where(class_year: 1952).each do |alum| %>
+  <%= alum.first_name %> <%= alum.last_name %>
+  <br>
+<% end %>
+
+<h2>1974</h2>
+
+<% Alum.where(class_year: 1974).each do |alum| %>
+  <%= alum.first_name %> <%= alum.last_name %>
+  <br>
+<% end %>
+
+<h2>2010</h2>
+
+<% Alum.where(class_year: 2010).each do |alum| %>
+  <%= alum.first_name %> <%= alum.last_name %>
+  <br>
+<% end %>

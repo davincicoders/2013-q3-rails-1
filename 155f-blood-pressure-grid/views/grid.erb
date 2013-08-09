@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Systolic</th>
+    <th>Diastolic</th>
+  </tr>
+  <% @patients.each do |patient| %>
+    <tr>
+      <td><%= patient.id %></td>
+      <td>
+        <%== text_field_tag "systolic_#{patient.id}", patient.systolic %>
+      </td>
+      <td>
+        <%== text_field_tag "diastolic_#{patient.id}", patient.diastolic %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%== submit_tag "Update" %>

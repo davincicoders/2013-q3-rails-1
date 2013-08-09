@@ -1,0 +1,48 @@
+<style>
+  th { text-align: left; }
+  th, td { padding: 0 5px; }
+</style>
+
+<h1>Search books</h1>
+
+<!-- TODO: write this part, based on the mockups -->
+
+<hr>
+
+<h1>Browse books</h1>
+
+<p>Browse by topic:
+  <ul>
+    <% @topics.each do |topic| %>
+      <li>
+        <a href="/topic/<%= topic %>">
+          <%= topic %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>Browse by author:
+  <ul>
+    <% @authors.each do |author| %>
+      <li>
+        <a href="/author/<%= author %>">
+          <%= author %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>Browse by publication year:
+  <ul>
+    <% @years.each do |year| %>
+      <li>
+        <a href="/year/<%= year %>">
+          <%= year %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</p>

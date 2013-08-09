@@ -1,0 +1,43 @@
+<h1>Edit phone numbers</h1>
+
+<table border="1">
+  <tr>
+    <th>#</th>
+    <th>Country</th>
+    <th>Number</th>
+    <th>Type</th>
+  </tr>
+  <% @phones.each do |phone| %>
+    <tr>
+      <td>
+        <%= phone.id %>
+      </td>
+      <td>
+        <% if phone.country_code == "AU" %>
+          Australia
+        <% elsif phone.country_code == "IN" %>
+          India 
+        <% elsif phone.country_code == "US" %>
+          United States
+        <% end %>
+      </td>
+      <td>
+        <%= phone.number %>
+      </td>
+      <td>
+        <% if phone.phone_type == "C" %>
+          Cellular
+        <% elsif phone.phone_type == "H" %>
+          Home
+        <% elsif phone.phone_type == "W" %>
+          Work
+        <% end %>
+      </td>
+      <td>
+        <a href="/<%= phone.id %>">
+          Edit
+        </a>
+      </td>
+    </tr>
+  <% end %>
+</table>
