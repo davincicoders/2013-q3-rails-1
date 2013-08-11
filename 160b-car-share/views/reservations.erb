@@ -1,0 +1,48 @@
+<p>
+  Welcome, jen
+  <%== submit_tag "Logout" %>
+</p>
+
+<h2>My current reservations</h2>
+
+Car number: 2 <br>
+Color: black <br>
+Model: VW Jetta <br>
+<%== submit_tag "Return car 2" %> <br>
+<br>
+
+<h2>List of available cars</h2>
+<table border="1">
+  <tr>
+    <th>Number</th>
+    <th>Color</th>
+    <th>Model</th>
+    <th>Available?</th>
+    <th>Reserve</th>
+  </tr>
+  <tr>
+     <td>1</td>
+     <td>red</td>
+     <td>VW Golf</td>
+     <td>Yes</td>
+     <td>
+       <%== submit_tag "Reserve car 1" %>
+     </td>
+  </tr>
+  <tr>
+     <td>2</td>
+     <td>black</td>
+     <td>VW Jetta</td>
+     <td>No</td>
+  </tr>
+  <tr>
+     <td>3</td>
+     <td>white</td>
+     <td>Toyota Celica</td>
+     <td>Yes</td>
+     <td>
+       <%== submit_tag "Reserve car 3" %>
+     </td>
+  </tr>
+</table>
+
