@@ -9,7 +9,8 @@ get "/login" do
 end
 
 post "/login" do
-  redirect "/reservations/1"
+#  redirect "/reservations/1"
+  halt erb(:login)
 end
 
 get "/reservations/1" do
