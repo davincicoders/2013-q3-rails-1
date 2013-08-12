@@ -5,6 +5,7 @@ get "/" do
 end
 
 get "/login" do 
+  @username = "jen"
   halt erb(:login)
 end
 
