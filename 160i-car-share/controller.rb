@@ -9,6 +9,7 @@ get "/login" do
 end
 
 post "/login" do
+  redirect "/reservations/1"
 end
 
 get "/reservations/1" do
