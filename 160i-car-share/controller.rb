@@ -12,7 +12,7 @@ end
 post "/login" do
   @username = params[:username]
 
-  if false
+  if @username == "jen"
     redirect "/reservations/1"
   else
     halt erb(:login)
