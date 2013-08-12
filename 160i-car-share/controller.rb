@@ -16,15 +16,15 @@ post "/login" do
   member = Member.find(member_id)
   if @username == member.username
     redirect "/reservations/1"
-  else
-    member_id = 2
-    member = Member.find(member_id)
-    if @username == member.username
-      redirect "/reservations/2"
-    else
-      halt erb(:login)
-    end
   end
+    
+  member_id = 2
+  member = Member.find(member_id)
+  if @username == member.username
+    redirect "/reservations/2"
+  end
+  
+  halt erb(:login)
 
 end
 
