@@ -12,11 +12,13 @@ end
 post "/login" do
   @username = params[:username]
 
-  member = Member.find(1)
+  member_id = 1
+  member = Member.find(member_id)
   if @username == member.username
     redirect "/reservations/1"
   else
-    member = Member.find(2)
+    member_id = 2
+    member = Member.find(member_id)
     if @username == member.username
       redirect "/reservations/2"
     else
