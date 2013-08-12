@@ -16,7 +16,8 @@ post "/login" do
   if @username == member.username
     redirect "/reservations/1"
   else
-    if @username == "ted"
+    member = Member.find(2)
+    if @username == member.username
       redirect "/reservations/2"
     else
       halt erb(:login)
