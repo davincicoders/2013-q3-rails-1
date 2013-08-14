@@ -1,0 +1,29 @@
+<h1>1</h1> 
+What collectibles come from the
+<%== select_tag :episode_name,
+  options_from_collection_for_select(Episode.all, :name, :name), prompt: "" %>
+episode?
+
+<%== submit_tag "Answer 1" %>
+
+<h1>2</h2>
+
+What collectibles include the word
+<%== select_tag :collectible_name_part, options_for_select(
+  ["Yoda", "Skywalker", "Luke", "C3P0", "Chewbacca", "Leia"]), prompt: "" %>
+?
+
+<%== submit_tag "Answer 2" %>
+
+<h1>3</h1>
+
+List every collectible and its category.
+(For example: "Luke Skywalker, Action Figure")
+
+<%== submit_tag "Answer 3" %>
+
+<h1>4</h1>
+
+List collectibles for episodes released before the year 1990.
+
+<%== submit_tag "Answer 4" %>

@@ -1,0 +1,38 @@
+<% if params[:commit] == "Answer 1" %>
+  <% episode_name = params[:episode_name] %>
+  <% episode = Episode.where(name: episode_name).first %>
+  <% Collectible.where(episode_id: episode.id).all.each do |collectible| %>
+    <%= collectible.name %>
+    <br>
+  <% end %>
+<% end %>
+
+<% if params[:commit] == "Answer 2" %>
+  <% name_part = params[:collectible_name_part] %>
+  <% collectibles = Collectible.where("name like ?", "%#{name_part}%").all %>
+  <% collectibles.each do |collectible| %>
+    <%= collectible.name %>
+    <br>
+  <% end %>
+<% end %>
+
+<% if params[:commit] == "Answer 3" %>
+  <% Collectible.all.each do |collectible| %>
+    <%= collectible.name %>,
+    <% category = Category.find(collectible.category_id) %>
+    <%= category.name %>
+    <br>
+  <% end %>
+<% end %>
+
+<% if params[:commit] == "Answer 4" %>
+  <% early_episodes = Episode.where("year < 1990").all %>
+  <% early_episodes.each do |episode| %>
+    <% collectibles = Collectible.where(episode_id: episode.id).all %>
+    <% collectibles.each do |collectible| %>
+      <%= collectible.name %>
+      <br>
+    <% end %>
+  <% end %>
+<% end %>
+

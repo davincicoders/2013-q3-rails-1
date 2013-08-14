@@ -1,0 +1,22 @@
+<h1><%= @title %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Author</th>
+  </tr>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td>
+        <a href="/recipe/<%= recipe.name %>">
+          <%= recipe.name %>
+        </a>
+      </td>
+      <td>
+        <a href="/by-author/<%= Author.author.full_name %>">
+          <%= Author.author.full_name %>
+        </a>
+      </td>
+    </tr>
+  <% end %>
+</table>
