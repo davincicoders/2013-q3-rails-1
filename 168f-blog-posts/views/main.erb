@@ -1,0 +1,46 @@
+<style>
+  tr { vertical-align: top; }
+  ul { margin: 0; }
+</style>
+
+<h1>Blog posts</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+  <% BlogPost.order(:id).all.each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= post.title %></td>
+      <td><%= Author.find(post.author_id).name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h1>Authors</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Blog posts</th>
+  </tr>
+  <% Author.order(:id).all.each do |author| %>
+    <tr>
+      <td><%= author.id %></td>
+      <td><%= author.name %></td>
+      <td>
+        <ul>
+          <% BlogPost.where(author_id: author.id).all.each do |post| %>
+            <li><%= post.title %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+
