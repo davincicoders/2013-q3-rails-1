@@ -1,0 +1,33 @@
+<h1>Sushi a la carte</h1>
+
+<p>
+  What is your table number?
+  <br>
+  <%== text_field_tag :table_number %>
+</p>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Price each</th>
+    <th>Quantity desired</th>
+  </tr>
+
+  <% @dishes.each do |dish| %>
+    <tr>
+      <td>
+        <%= dish.name %>
+      </td>
+      <td align="right">
+        <%= "$%.2f" % dish.price %>
+      </td>
+      <td>
+        <%== text_field_tag "quantity_for_dish_#{dish.id}", "", size: 2 %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%== submit_tag "Place order" %>
+</p>
