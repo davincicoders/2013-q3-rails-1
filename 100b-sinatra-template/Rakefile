@@ -95,7 +95,7 @@ namespace :db do
         puts sprintf("| Type of %-#{longest_name_length}s %s %s",
           row2['column_name'] + ':',
           row2['data_type'],
-          row2['is_nullable'] ? 'not null' : '')
+          row2['is_nullable'] ? '' : 'not null')
       end
       puts '' # to separate schema from data
 
