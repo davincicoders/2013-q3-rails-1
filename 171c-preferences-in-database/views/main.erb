@@ -1,0 +1,24 @@
+<p>
+  <%== select_tag :color,
+    options_for_select(["red", "yellow", "green"], nil), prompt: "" %>
+</p>
+
+<p>
+  Favorite letter<br>
+  <%== radio_button_tag :letter, "A", false %> A
+  <%== radio_button_tag :letter, "B", false %> B
+  <%== radio_button_tag :letter, "C", false %> C
+</p>
+
+<p>
+  Favorite number<br>
+  <%== text_field_tag :number, "" %>
+</p>
+
+<p>
+  <%== submit_tag "Update preferences" %>
+</p>
+
+<p>
+  <a href="/logout">Logout</a>
+</p>

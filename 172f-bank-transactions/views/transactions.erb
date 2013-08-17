@@ -1,0 +1,27 @@
+<h1>Transactions for <%= @account.account_type %></h1>
+
+<table border="1">
+  <tr>
+    <th>Date</th>
+    <th>Memo</th>
+    <th>Amount</th>
+    <th></th>
+  </tr>
+  <% @account.transactions.order(:date).each do |txn| %>
+    <tr>
+      <td><%== text_field_tag "date_#{txn.id}", txn.date %></td>
+      <td><%== text_field_tag "memo_#{txn.id}", txn.memo %></td>
+      <td>$<%== text_field_tag "amount_#{txn.id}", "%.2f" % txn.amount %></td>
+      <td><%== submit_tag "Delete transaction #{txn.id}" %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><%== text_field_tag "date_new", "" %></td>
+    <td><%== text_field_tag "memo_new", "" %></td>
+    <td>$<%== text_field_tag "amount_new", "" %></td>
+  </tr>
+</table>
+
+<%== submit_tag "Save" %>
+
+<p>Warning: don't press Enter on this page; click Save instead.</p>

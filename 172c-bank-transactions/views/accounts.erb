@@ -1,0 +1,20 @@
+<h1>Accounts</h1>
+
+<table border="1">
+  <tr>
+    <th>type</th>
+    <th>balance</th>
+  </tr>
+  <% @user.accounts.each do |account| %>
+    <tr>
+      <td>
+        <a href="/accounts/<%= account.account_type %>">
+          <%= account.account_type %>
+        </a>
+      </td>
+      <td>
+        <%= "%.2f" % account.current_balance %>
+      </td>
+    </tr>
+  <% end %>
+</table>
