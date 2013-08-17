@@ -9,8 +9,9 @@ require 'will_paginate/active_record' if defined? WillPaginate
 # Escape HTML
 set :erb, escape_html: true
 
-# Enable sessions -- note that a web server restart will invalidate all cookies
-use Rack::Session::Cookie, secret: SecureRandom.hex
+# Enable sessions -- hardcoded secret to avoid logout on server restart.
+use Rack::Session::Cookie,
+  secret: "524aee674662bbe8a363988a7b4dbcb304f52ae61ef12fc1f3b6a34d8388c71202"
 
 # for Rails form helpers
 helpers ActionView::Helpers::FormTagHelper
