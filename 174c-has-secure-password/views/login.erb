@@ -1,0 +1,27 @@
+<% if @message != nil %>
+  <p><%= @message %><p>
+<% end %>
+
+<h2>Login</h2>
+
+<p>
+  Username
+  <br>
+  <%== text_field_tag :username %>
+  <br>
+
+  Password
+  <br>
+  <%== password_field_tag :password %>
+  <br>
+
+  <%== submit_tag "Login" %>
+</p>
+
+<p>
+  <a href="/users/new">Need to create an account?</a>
+</p>
+
+<p>
+  Existing accounts: abe/123 and amy/456
+</p>
