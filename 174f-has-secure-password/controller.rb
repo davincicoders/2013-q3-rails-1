@@ -4,6 +4,24 @@ get "/" do
   redirect "/login"
 end
 
+get "/users/new" do
+  @user = User.new
+  halt erb(:new)
+end
+
+post "/users/new" do
+  @user = User.new
+  @user.username = params[:username]
+  @user.password = params[:password]
+  @user.password_confirmation = params[:password_confirmation]
+
+  if @user.save == true
+    redirect "/login"
+  else
+    halt erb(:new)
+  end
+end
+
 get "/login" do
   halt erb(:login)
 end
@@ -16,7 +34,18 @@ post "/login" do
   elsif named_user.authenticate(params[:password]) == false
     @message = "Wrong password"
   else
-    @message = "Successful login"
+    session[:user_id] = named_user.id
+    redirect "/welcome"
   end
   halt erb(:login)
+end
+
+get "/welcome" do
+  @user = User.find(session[:user_id])
+  halt erb(:welcome)
+end
+
+get "/logout" do
+  session.clear
+  redirect "/login"
 end
