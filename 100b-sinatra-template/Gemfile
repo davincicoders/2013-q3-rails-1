@@ -13,3 +13,7 @@ gem 'sinatra'
 gem 'erubis' # for automatic escaping of HTML
 gem 'actionpack', require: 'action_view' # for Rails form helpers
 gem 'dynamic_form' # for error_messages_for
+
+gem 'rack-flash3', require: 'rack-flash'
+gem 'sinatra-footnotes'
+gem 'bcrypt-ruby', '~> 3.0.0'

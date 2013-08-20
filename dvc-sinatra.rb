@@ -5,6 +5,7 @@ require 'yaml'
 require 'action_view' # for Rails form helpers
 require 'erubis' # for escaping of HTML
 require 'will_paginate/active_record' if defined? WillPaginate
+require 'sinatra-footnotes'
 
 # Escape HTML
 set :erb, escape_html: true
@@ -12,6 +13,8 @@ set :erb, escape_html: true
 # Enable sessions -- hardcoded secret to avoid logout on server restart.
 use Rack::Session::Cookie,
   secret: "524aee674662bbe8a363988a7b4dbcb304f52ae61ef12fc1f3b6a34d8388c71202"
+
+use Rack::Flash, sweep: true
 
 # for Rails form helpers
 helpers ActionView::Helpers::FormTagHelper
