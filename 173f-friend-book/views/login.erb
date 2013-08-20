@@ -1,0 +1,16 @@
+<% if @error != nil %>
+  <b>Error: <%= @error %></b>
+<% end %>
+
+<h1>Login to FriendBook</h1>
+
+<p>
+  Choose your name
+  <br>
+  <%== select_tag :name,
+    options_from_collection_for_select(Person.all, :name, :name), prompt: "" %>
+</p>
+
+<p>(No password is necessary)</p>
+
+<%== submit_tag "Login" %>

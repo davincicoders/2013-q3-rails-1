@@ -1,0 +1,27 @@
+<p>
+  You are logged in as <%= @person.name %>.
+  <a href="/logout">Logout</a>
+</p>
+
+<h1>Who I follow</h1>
+
+<ul>
+  <% @person.followings_from_me.each do |following| %>
+    <li><%= following.to_person.name %></li>
+  <% end %>
+  <li>
+    someone new:
+    <%== select_tag :name_to_follow,
+      options_from_collection_for_select(Person.all, :name, :name),
+      prompt: "" %>
+    <%== submit_tag "Follow" %>
+  </li>
+</ul>
+
+<h1>My followers</h1>
+
+<ul>
+  <% @person.followings_to_me.each do |following| %>
+    <li><%= following.from_person.name %></li>
+  <% end %>
+</ul>
