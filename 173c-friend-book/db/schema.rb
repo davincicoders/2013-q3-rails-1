@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20130817233454) do
 
   create_table "people", :force => true do |t|
     t.string "name"
-    t.string "gender"
+    t.string "password_digest"
   end
 
 end

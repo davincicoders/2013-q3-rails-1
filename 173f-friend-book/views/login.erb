@@ -11,6 +11,12 @@
     options_from_collection_for_select(Person.all, :name, :name), prompt: "" %>
 </p>
 
-<p>(No password is necessary)</p>
+<p>
+  Password
+  <br>
+  <%== password_field_tag :password %>
+</p>
 
 <%== submit_tag "Login" %>
+
+<p>(Password is the first letter of the name, uppercase)</p>

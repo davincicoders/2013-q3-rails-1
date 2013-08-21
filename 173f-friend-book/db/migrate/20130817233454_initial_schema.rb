@@ -2,7 +2,7 @@ class InitialSchema < ActiveRecord::Migration
   def up
     create_table :people do |t|
       t.string :name
-      t.string :gender
+      t.string :password_digest
     end
     create_table :followings do |t|
       t.integer :from_person_id

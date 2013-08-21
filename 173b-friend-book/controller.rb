@@ -1,20 +1,7 @@
 require '../dvc-sinatra.rb'
 
 get "/" do
-  if session[:person_id] == nil
-    redirect "/login"
-  end
-
-  @person = Person.find(session[:person_id])
-  halt erb(:main)
-end
-
-post "/" do
-  @person = Person.find(session[:person_id])
-  if params[:commit] == "Follow"
-    # TODO: Write this
-  end
-  redirect "/"
+  redirect "/login"
 end
 
 get "/login" do
@@ -22,9 +9,15 @@ get "/login" do
 end
 
 post "/login" do
-  found_person = Person.where(name: params[:name]).first
-  session[:person_id] = found_person.id
-  redirect "/"
+  # TODO: write this
+end
+
+get "/followers" do
+  # TODO: write this
+end
+
+post "/followers" do
+  # TODO: write this
 end
 
 get "/logout" do
