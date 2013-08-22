@@ -8,9 +8,9 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
   </head>
   <body>
-    <% if flash.has?(:error) %>
-      <div class="flash-error">
-        <%= flash[:error] %>
+    <% flash.keys.each do |key| %>
+      <div class="flash-<%= key %>">
+        <%= flash[key] %>
       </div>
     <% end %>
 
