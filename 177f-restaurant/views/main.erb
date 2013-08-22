@@ -1,0 +1,54 @@
+<h1>Tables</h1>
+
+<table border='1'>
+  <tr>
+    <th>Table #</th>
+    <th># chairs</th>
+    <th></th>
+  </tr>
+  <% @tables.each do |table| %>
+    <tr>
+      <td>Table #<%= table.id %></td>
+      <td><%= table.number_of_chairs %> chairs</td>
+      <td>
+        <% order = Order.where(table_id: table.id, is_paid: false).first %>
+        <% if order != nil %>
+          <a href="/order/<%= order.id %>">
+            Occupied
+          </a>
+        <% else %>
+          <%== submit_tag "Occupy table #{table.id}" %>
+        <% end %>
+      </a>
+    </li>
+  <% end %>
+</table>
+
+<h1>Orders</h1>
+
+<table border='1'>
+  <tr>
+    <th>Order #</th>
+    <th>Table #</th>
+    <th>Started at</th>
+    <th>Last ordered at</th>
+    <th>Total</th>
+    <th>Paid?</th>
+  </tr>
+  <% @orders.each do |order| %>
+    <tr>
+      <td>Order #<%= order.id %></td>
+      <td>Table #<%= order.table_id %></td>
+      <td><%= order.created_at.strftime("%H:%M") %></td>
+      <td><%= order.updated_at.strftime("%H:%M") %></td>
+      <td><%= '%.2f' % order.total_price %></td>
+      <td>
+        <% if order.is_paid %>
+          YES
+        <% else %>
+          NOT YET
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
