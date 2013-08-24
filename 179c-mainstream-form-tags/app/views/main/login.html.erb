@@ -1,0 +1,23 @@
+<% if @error != nil %>
+  <p>
+    <b>Error: <%= @error %></b>
+  </p>
+<% end %>
+
+<h1>Car Share login</h1>
+
+<p>
+  Username<br>
+  <%== text_field_tag :username %>
+</p>
+
+<p>
+  Password<br>
+  <%== password_field_tag :password %>
+</p>
+
+<p>
+  <%== button_tag "Login" %>
+</p>
+
+<p>(Username/password is jen/123 or ted/456)</p>

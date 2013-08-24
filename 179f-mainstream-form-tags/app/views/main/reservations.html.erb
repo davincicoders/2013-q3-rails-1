@@ -1,0 +1,40 @@
+<p>
+  Welcome, <%= @member.username %>
+  <%== submit_tag "Logout" %>
+</p>
+
+<h2>My current reservations</h2>
+
+<% @reserved_cars.each do |car| %>
+  Car number: <%= car.id %> <br>
+  Color: <%= car.color %> <br>
+  Model: <%= car.model %> <br>
+  <%== submit_tag "Return car #{car.id}" %> <br>
+  <br>
+<% end %>
+
+<h2>List of available cars</h2>
+<table border="1">
+  <tr>
+    <th>Number</th>
+    <th>Color</th>
+    <th>Model</th>
+    <th>Available?</th>
+    <th>Reserve</th>
+  </tr>
+  <% Car.order("id").all.each do |car| %>
+    <tr>
+       <td><%= car.id %></td>
+       <td><%= car.color %></td>
+       <td><%= car.model %></td>
+       <% if car.reserving_member_id == nil %>
+         <td>Yes</td>
+         <td>
+           <%== submit_tag "Reserve car #{car.id}" %>
+         </td>
+       <% else %>
+         <td>No</td>
+       <% end %>
+    </tr>
+  <% end %>
+</table>
