@@ -48,4 +48,4 @@ gem 'dynamic_form' # for error_messages_for
 
 gem 'rake_db_dump'
 
-gem 'rails-footnotes'
+gem 'rails-footnotes', group: :development
