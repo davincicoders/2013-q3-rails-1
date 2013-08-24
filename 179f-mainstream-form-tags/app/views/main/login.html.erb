@@ -1,3 +1,5 @@
+<%== form_tag "/login" do %>
+
 <% if @error != nil %>
   <p>
     <b>Error: <%= @error %></b>
@@ -21,3 +23,5 @@
 </p>
 
 <p>(Username/password is jen/123 or ted/456)</p>
+
+<% end %>
