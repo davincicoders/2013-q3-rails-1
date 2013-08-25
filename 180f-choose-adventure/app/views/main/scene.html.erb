@@ -1,0 +1,31 @@
+<% if @from_choice != nil %>
+  <a href="/scene/<%= @from_choice.from_scene_id %>">
+    Go back
+  </a>
+<% end %>
+
+<h1><%= @scene.title %></h1>
+
+<p><%= @scene.body %></p>
+
+<ul>
+  <% @scene.choices.each do |choice| %>
+    <li>
+      <a href="/scene/<%= choice.to_scene_id %>">
+        <%= choice.description %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+<p>
+  Story by
+  <a href="http://yrps5ma.wikispaces.com/">
+    Grade 5MA of Yarra Road Primary School
+  </a>
+  , licensed by
+  <a href="http://www.creativecommons.org/licenses/by-sa/2.5">
+    Creative Commons Attribution Share-Alike 2.5 License
+  </a>
+</p>
