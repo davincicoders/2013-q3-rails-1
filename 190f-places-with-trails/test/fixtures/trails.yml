@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  direction: MyString
+  from_place_id: 1
+  to_place_id: 1
+
+two:
+  direction: MyString
+  from_place_id: 1
+  to_place_id: 1
