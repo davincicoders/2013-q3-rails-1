@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  acctor_id: 1
+  play_id: 1
+
+two:
+  acctor_id: 1
+  play_id: 1
