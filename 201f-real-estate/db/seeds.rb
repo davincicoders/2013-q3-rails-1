@@ -1,4 +1,4 @@
-Property.create! \
+House.create! \
   address:         "123 Easy St",
   city:            "Louisville",
   state:           "CO",
@@ -8,7 +8,7 @@ Property.create! \
   num_square_feet: "5,000",
   image_url:       "http://farm1.staticflickr.com/55/139445633_e2fabef491.jpg"
 
-Property.create! \
+House.create! \
   address:         "35 Oak Ln",
   city:            "Lafayette",
   state:           "CO",
@@ -18,7 +18,7 @@ Property.create! \
   num_square_feet: "5,000",
   image_url:       "http://farm1.staticflickr.com/104/292132478_05c200a320.jpg"
 
-Property.create! \
+House.create! \
   address:         "254 Marigold Ct",
   city:            "Boulder",
   state:           "CO",
@@ -28,7 +28,5 @@ Property.create! \
   num_square_feet: "7,000",
   image_url:       "http://farm8.staticflickr.com/7047/6973026131_8e733ee374.jpg"
 
-PropertyAdmin.create! username: "bob",
-  password: "123", password_confirmation: "123"
-PropertyAdmin.create! username: "sue",
-  password: "234", password_confirmation: "234"
+Admin.create! username: "bob", password: "123", password_confirmation: "123"
+Admin.create! username: "sue", password: "234", password_confirmation: "234"

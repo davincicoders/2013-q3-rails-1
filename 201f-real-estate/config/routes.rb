@@ -1,14 +1,16 @@
 App::Application.routes.draw do
-  get  "/"                    => "real_estate#root"
-  get  "/view_properties"     => "real_estate#view_properties"
-  get  "/view_property/:id"   => "real_estate#view_property"
-  get  "/admin_login"         => "admin#login"
-  post "/admin_login"         => "admin#login_post"
-  get  "/edit_properties"     => "admin#edit_properties"
-  get  "/edit_property/:id"   => "admin#edit_property"
-  post "/edit_property/:id"   => "admin#edit_property_post"
-  get  "/add_new_property"    => "admin#add_new_property"
-  post "/create_property"     => "admin#create_property"
-  post "/delete_property/:id" => "admin#delete_property"
-  post "/logout"              => "admin#logout"
+  get  "/"           => "main#root"
+  get  "/houses"     => "main#index"
+  get  "/houses/:id" => "main#show"
+
+  get  "/admin/login"      => "admin#login"
+  post "/admin/login"      => "admin#login_post"
+  get  "/admin/logout"     => "admin#logout"
+
+  get  "/admin/houses"     => "admin#index"
+  post "/admin/houses"     => "admin#index_post"
+  get  "/admin/houses/new" => "admin#new"
+  post "/admin/houses/new" => "admin#new_post"
+  get  "/admin/houses/:id" => "admin#edit"
+  post "/admin/houses/:id" => "admin#edit_post"
 end

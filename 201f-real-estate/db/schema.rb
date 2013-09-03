@@ -16,7 +16,12 @@ ActiveRecord::Schema.define(version: 20130312221817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "properties", force: true do |t|
+  create_table "admins", force: true do |t|
+    t.string "username"
+    t.string "password_digest"
+  end
+
+  create_table "houses", force: true do |t|
     t.string   "address"
     t.string   "city"
     t.string   "state",           limit: 2
@@ -27,11 +32,6 @@ ActiveRecord::Schema.define(version: 20130312221817) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "property_admins", force: true do |t|
-    t.string "username"
-    t.string "password_digest"
   end
 
 end

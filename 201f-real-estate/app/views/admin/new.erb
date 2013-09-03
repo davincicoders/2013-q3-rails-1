@@ -1,0 +1,18 @@
+<h1>Add new house</h1>
+
+<% if @house.errors.size > 0 %>
+  Errors:
+  <ul>
+  <% for error in @house.errors.full_messages %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag "/admin/houses/new" do %>
+  <%= render :partial => "house_form_fields" %>
+
+  <p>
+    <button name="create" value="create">Create</button>
+  <p>
+<% end %>
