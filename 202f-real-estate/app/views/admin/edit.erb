@@ -2,8 +2,8 @@
 
 <%== error_messages_for @house %>
 
-<%= form_tag "/admin/houses/#{@house.id}" do %>
-  <%= render "house_form_fields" %>
+<%== form_tag "/admin/houses/#{@house.id}" do %>
+  <%== render "house_form_fields" %>
 
   <p>
     <%== submit_tag "Update" %>
