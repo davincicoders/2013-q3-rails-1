@@ -5,7 +5,6 @@ class AdminController < ApplicationController
       @admin = Admin.where(id: session[:admin_id]).first
     else
       flash[:error] = "You must be logged in to see that page."
-      session[:attempted_path] = request.path_info
       redirect_to "/admin/login" and return
     end
   end
@@ -27,14 +26,7 @@ class AdminController < ApplicationController
       render :login and return
     else 
       session[:admin_id] = admin.id
-
-      attempted_path = session[:attempted_path]
-      if attempted_path != nil
-        session[:attempted_path] = nil
-        redirect_to attempted_path and return
-      else
-        redirect_to "/admin/houses" and return
-      end
+      redirect_to "/admin/houses" and return
     end
   end
 
