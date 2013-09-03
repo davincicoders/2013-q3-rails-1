@@ -1,0 +1,16 @@
+<% if @property.errors.size > 0 %>
+  Errors:
+  <ul>
+  <% for error in @property.errors.full_messages %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag "/create_property" do %>
+  <%= render :partial => "property_form_fields" %>
+
+  <p>
+    <button name="create" value="create">Create</button>
+  <p>
+<% end %>

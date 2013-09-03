@@ -1,0 +1,29 @@
+<table border="1">
+  <tr>
+    <th>ID #</th>
+    <th>Address</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for property in @properties %>
+    <tr>
+      <td><%= property.id %></td>
+      <td><%= property.address %></td>
+      <td><%= property.price %></td>
+      <td>
+        <a href="/edit_property/<%= property.id %>">Edit</a>
+      </td>
+      <td>
+        <%= form_tag "/delete_property/#{property.id}" do %>
+          <button name="delete" value="delete">Delete</button>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="5">
+      <a href="/add_new_property">Add new property</a>
+    </td>
+  </tr>
+</table>

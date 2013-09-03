@@ -1,0 +1,21 @@
+<div style='float:right'>
+  <a href="/admin_login">Login</a>
+</div>
+
+<% for property in @properties %>
+  <div style="float:left;margin-right:30px">
+    <a href="/view_property/<%= property.id %>">
+      <img src="<%= property.image_url %>" width="250" height="188">
+    </a>
+    <br>
+    <div style="float:right">
+      <a href="/view_property/<%= property.id %>">
+        <%= property.price %>
+      </a>
+    </div>
+    <a href="/view_property/<%= property.id %>">
+      <%= property.address %>
+    </a>
+  </div>
+<% end %>
+

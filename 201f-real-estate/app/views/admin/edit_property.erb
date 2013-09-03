@@ -1,0 +1,16 @@
+<% if @property.errors.size > 0 %>
+  Errors:
+  <ul>
+  <% for error in @property.errors.full_messages %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag "/edit_property/#{@property.id}" do %>
+  <%= render :partial => "property_form_fields" %>
+
+  <p>
+    <button name="update" value="update">Update</button>
+  </p>
+<% end %>
