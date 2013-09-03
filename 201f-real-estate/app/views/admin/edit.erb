@@ -10,7 +10,7 @@
 <% end %>
 
 <%= form_tag "/admin/houses/#{@house.id}" do %>
-  <%= render :partial => "house_form_fields" %>
+  <%= render "house_form_fields" %>
 
   <p>
     <button name="update" value="update">Update</button>
