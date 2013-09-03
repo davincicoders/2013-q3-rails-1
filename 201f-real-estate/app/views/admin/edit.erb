@@ -1,18 +1,11 @@
 <h1>Edit house #<%= @house.id %></h1>
 
-<% if @house.errors.size > 0 %>
-  Errors:
-  <ul>
-  <% for error in @house.errors.full_messages %>
-    <li><%= error %></li>
-  <% end %>
-  </ul>
-<% end %>
+<%== error_messages_for @house %>
 
 <%= form_tag "/admin/houses/#{@house.id}" do %>
   <%= render "house_form_fields" %>
 
   <p>
-    <button name="update" value="update">Update</button>
+    <%== submit_tag "Update" %>
   </p>
 <% end %>
