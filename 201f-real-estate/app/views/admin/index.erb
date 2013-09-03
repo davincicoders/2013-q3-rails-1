@@ -1,0 +1,33 @@
+<%== form_tag "/admin/houses" do %>
+
+<h1>Index of houses</h1>
+
+<table border="1">
+  <tr>
+    <th>ID #</th>
+    <th>Address</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for house in @houses %>
+    <tr>
+      <td><%= house.id %></td>
+      <td><%= house.address %></td>
+      <td><%= house.price %></td>
+      <td>
+        <a href="/admin/houses/<%= house.id %>">Edit</a>
+      </td>
+      <td>
+        <%== submit_tag "Delete house #{house.id}" %>
+      </td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="5">
+      <a href="/admin/houses/new">Add new house</a>
+    </td>
+  </tr>
+</table>
+
+<% end %>
