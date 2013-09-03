@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if @admin %>
+  You are logged in as <b><%= @admin.username %></b>.
+  <a href="/admin/logout">Logout</a>
+  <hr>
+<% end %>
+
+<% flash.keys.each do |key| %>
+  <div class="flash flash-<%= key %>">
+    <%= flash[key] %>
+  </div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
