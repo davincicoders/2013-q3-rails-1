@@ -1,0 +1,12 @@
+<% @dishes.each do |dish| %>
+  <h2><%= dish.name %></h2>
+  <ul>
+    <% LineItem.where(dish_id: dish.id).all.each do |line_item| %>
+      <li>
+        Quantity <%= line_item.quantity %>
+        ordered by table <%= line_item.order.table_number %>
+        on <%= line_item.order.created_at %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

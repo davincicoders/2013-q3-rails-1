@@ -1,0 +1,27 @@
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Table number</th>
+    <th>Line items</th>
+    <th>Total price</th>
+  </tr>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.table_number %></td>
+      <td>
+        <ul>
+          <% order.line_items.each do |line_item| %>
+            <li>
+              <%= line_item.quantity %>
+              <%= line_item.dish.name %>
+              at <%= "$%.2f" % line_item.dish.price %> each = 
+              <%= "$%.2f" % line_item.line_price %>
+            </li>
+          <% end %>
+        </ul>
+      </td>
+      <td><%= "$%.2f" % order.total_price %></td>
+    </tr>
+  <% end %>
+</table>
