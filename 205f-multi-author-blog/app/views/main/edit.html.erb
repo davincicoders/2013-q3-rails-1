@@ -1,0 +1,28 @@
+<%== form_tag "/edit/#{@post.id}" do %>
+
+<p>
+  <a href="/">Back to index</a>
+</p>
+
+<%== error_messages_for @post %>
+
+<h1><%= @title %></h1>
+
+<p>
+  Date written at: (YYYY-MM-DD)
+  <br>
+  <%== text_field_tag :written_at, @post.written_at %>
+</p>
+
+<p>
+  Body of post:
+  <br>
+  <%== text_area_tag :body, @post.body, rows: 10, cols: 80 %>
+  </p>
+</p>
+
+<p>
+  <%== submit_tag "Update" %>
+</p>
+
+<% end %>

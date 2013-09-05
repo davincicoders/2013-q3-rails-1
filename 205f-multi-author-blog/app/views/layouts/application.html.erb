@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% flash.keys.each do |key| %>
+  <div class="flash flash-<%= key %>">
+    <%= flash[key] %>
+  </div>
+<% end %>
+
+<div style='margin-top: 10px; margin-left:130px;width:500px'>
+  <% if @author == nil %>
+    You must <a href="/login">login</a> to edit or create a new post.</a>
+  <% else %>
+    You are logged in as <b><%= @author.full_name %></b>.
+    <a href="/new">Write new post</a> or <a href="/logout">logout</a>
+  <% end %>
+</div>
+<hr>
+
+<%= yield %>
+
+</body>
+</html>
