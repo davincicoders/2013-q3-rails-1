@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Write new post</title>
+</head>
+<body>
+
+
+<div style='margin-top: 10px; margin-left:130px;width:500px'>
+    You are logged in as <b>Anna Green Winslow</b>.
+    <a href="/new">Write new post</a> or <a href="/logout">logout</a>
+</div>
+<hr>
+
+<form accept-charset="UTF-8" action="/new" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="tGEU6TvXXL6y1LSGexqVU+Vd1L8p/fY6T3/iA+dAUqw=" /></div>
+
+<p>
+  <a href="/">Back to index</a>
+</p>
+
+
+
+<h1>Write new post</h1>
+
+<p>
+  Date written at: (YYYY-MM-DD)
+  <br>
+  <input id="written_at" name="written_at" type="text" />
+</p>
+
+<p>
+  Body of post:
+  <br>
+  <textarea cols="80" id="body" name="body" rows="10">
+</textarea>
+  </p>
+</p>
+
+<p>
+  <input name="commit" type="submit" value="Create" />
+</p>
+
+</form>
+
+</body>
+</html>

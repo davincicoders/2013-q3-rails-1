@@ -1,7 +1,7 @@
 class CreateBlogPosts < ActiveRecord::Migration
   def change
     create_table :blog_posts do |t|
-      t.integer :author_id
+      t.string :author_name
       t.date :written_at
       t.text :body
 

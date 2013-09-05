@@ -16,17 +16,8 @@ ActiveRecord::Schema.define(version: 20130905170140) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authors", force: true do |t|
-    t.string   "full_name"
-    t.string   "username"
-    t.string   "password_digest"
-    t.string   "portrait_filename"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "blog_posts", force: true do |t|
-    t.integer  "author_id"
+    t.string   "author_name"
     t.date     "written_at"
     t.text     "body"
     t.datetime "created_at"

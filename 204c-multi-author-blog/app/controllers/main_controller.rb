@@ -11,10 +11,11 @@ class MainController < ApplicationController
   end
 
   def edit_post
-    id     = params[:id]
-    @post  = BlogPost.find(id)
-    @post.written_at = params[:written_at]
-    @post.body       = params[:body]
+    id                = params[:id]
+    @post             = BlogPost.find(id)
+    @post.written_at  = params[:written_at]
+    @post.body        = params[:body]
+    @post.author_name = params[:author_name]
 
     if @post.save == true
       redirect_to "/" and return
@@ -31,9 +32,10 @@ class MainController < ApplicationController
   end
 
   def new_post
-    @post            = BlogPost.new
-    @post.written_at = params[:written_at]
-    @post.body       = params[:body]
+    @post             = BlogPost.new
+    @post.written_at  = params[:written_at]
+    @post.body        = params[:body]
+    @post.author_name = params[:author_name]
 
     if @post.save == true
       redirect_to "/" and return
