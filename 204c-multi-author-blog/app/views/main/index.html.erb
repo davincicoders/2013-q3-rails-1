@@ -1,0 +1,36 @@
+<p>
+  <a href="/new">Write new post</a>
+</p>
+<hr>
+
+<% @blog_posts.each do |post| %>
+  <div style='margin-bottom:10px'>
+    <% if post.author != nil %>
+      <div style='float:left'>
+        <%== image_tag post.author.portrait_filename %>
+      </div>
+    <% end %>
+  
+    <div style='margin-left:130px;width:500px'>
+      <div style='float:right'>
+        <a href="/edit/<%= post.id %>">
+          edit
+        </a>
+      </div>
+  
+      <h2 style='display:inline'>
+        <%= post.written_at.strftime('%A, %B %-d, %Y') %>
+      </h2>
+      <br>
+      <%= post.body %>
+  
+      <% if post.author != nil %>
+        <div style='float:right;font-weight:bold'>
+          &mdash;<%= post.author.full_name %>
+        </div>
+      <% end %>
+    </div>
+    <br style='clear:both'>
+  </div>
+  
+<% end %>
