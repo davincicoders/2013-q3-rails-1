@@ -1,0 +1,27 @@
+<% @blog_posts.each do |post| %>
+  <div style='margin-bottom:10px'>
+    <div style='float:left'>
+      <%== image_tag post.author.portrait_filename %>
+    </div>
+  
+    <div style='margin-left:130px;width:500px'>
+      <div style='float:right'>
+        <a href="/posts/<%= post.id %>">
+          edit
+        </a>
+      </div>
+  
+      <h2 style='display:inline'>
+        <%= post.written_at.strftime('%A, %B %-d, %Y') %>
+      </h2>
+      <br>
+      <%= post.body %>
+  
+      <div style='float:right;font-weight:bold'>
+        &mdash;<%= post.author.full_name %>
+      </div>
+    </div>
+    <br style='clear:both'>
+  </div>
+  
+<% end %>
