@@ -5,11 +5,13 @@
     </div>
   
     <div style='margin-left:130px;width:500px'>
-      <div style='float:right'>
-        <a href="/posts/<%= post.id %>">
-          edit
-        </a>
-      </div>
+      <% if @author != nil && @author.id == post.author_id %>
+        <div style='float:right'>
+          <a href="/edit/<%= post.id %>">
+            edit
+          </a>
+        </div>
+      <% end %>
   
       <h2 style='display:inline'>
         <%= post.written_at.strftime('%A, %B %-d, %Y') %>

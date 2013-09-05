@@ -1,0 +1,21 @@
+<%== form_tag "/login" do %>
+  <div style='margin: 100px auto; width: 220px; border: 1px gray dotted; padding: 20px'>
+    <div style='width:80px; display:inline-block'>
+      Username
+    </div>
+    <%== text_field_tag :username %>
+    <br>
+    
+    <div style='width:80px; display:inline-block'>
+      Password
+    </div>
+    <%== password_field_tag :password %>
+    <br>
+    
+    <div style='width:80px; display:inline-block'></div>
+    <%== submit_tag "Login" %>
+    <br>
+
+    <p>(Try john/123 or anna/234)</p>
+  </div>
+<% end %>
