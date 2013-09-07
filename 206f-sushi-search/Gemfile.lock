@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/tommireinikainen/rails-footnotes.git
-  revision: 2f6f38808b052ba7e1b59107acdc6144a3ec448e
-  ref: 2f6f38808b052ba7e1b59107acdc6144a3ec448e
-  specs:
-    rails-footnotes (3.7.9)
-      rails (>= 3.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -131,7 +123,6 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.0.0)
-  rails-footnotes!
   rails_12factor
   rake_db_dump
   sass-rails (~> 4.0.0)
