@@ -16,9 +16,9 @@
       <tr>
         <td><%= ad.company_name %></td>
         <td><%= ad.duration %></td>
-        <td><a href="/ads/<%= ad.id %>">Show</a></td>
-        <td><a href="/ads/<%= ad.id %>/edit">Edit</a></td>
-        <td><a href="/ads/<%= ad.id %>" data-method="delete">Destroy</a></td>
+        <td><a href="/show_ad/<%= ad.id %>">Show</a></td>
+        <td><a href="/edit_ad/<%= ad.id %>">Edit</a></td>
+        <td><a href="/destroy_ad/<%= ad.id %>">Destroy</a></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<a href="/ads/new">New Ad</a>
+<a href="/new_ad">New Ad</a>
