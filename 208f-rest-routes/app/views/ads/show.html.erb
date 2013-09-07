@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= flash[:notice] %></p>
 
 <p>
   <strong>Company name:</strong>
@@ -10,5 +10,5 @@
   <%= @ad.duration %>
 </p>
 
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
-<%= link_to 'Back', ads_path %>
+<a href="/ads/<%= @ad.id %>/edit">Edit</a> |
+<a href="/ads">Back</a>

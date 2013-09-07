@@ -1,74 +1,55 @@
 class AdsController < ApplicationController
-  before_action :set_ad, only: [:show, :edit, :update, :destroy]
 
-  # GET /ads
-  # GET /ads.json
   def index
     @ads = Ad.all
+    render :index and return
   end
 
-  # GET /ads/1
-  # GET /ads/1.json
   def show
+    @ad = Ad.find(params[:id])
+    render :show and return
   end
 
-  # GET /ads/new
   def new
     @ad = Ad.new
+    render :new and return
   end
 
-  # GET /ads/1/edit
   def edit
+    @ad = Ad.find(params[:id])
+    render :edit and return
   end
 
-  # POST /ads
-  # POST /ads.json
   def create
-    @ad = Ad.new(ad_params)
+    @ad              = Ad.new
+    @ad.company_name = params[:company_name]
+    @ad.duration     = params[:duration]
 
-    respond_to do |format|
-      if @ad.save
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @ad }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    if @ad.save == true
+      flash[:notice] = "Ad was successfully created."
+      redirect_to "/ads/#{@ad.id}"
+    else
+      render :new and return
     end
   end
 
-  # PATCH/PUT /ads/1
-  # PATCH/PUT /ads/1.json
   def update
-    respond_to do |format|
-      if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    @ad              = Ad.find(params[:id])
+    @ad.company_name = params[:company_name]
+    @ad.duration     = params[:duration]
+
+    if @ad.save == true
+      flash[:notice] = "Ad was successfully updated."
+      redirect_to "/ads/#{@ad.id}"
+    else
+      render :edit and return
     end
   end
 
-  # DELETE /ads/1
-  # DELETE /ads/1.json
   def destroy
+    @ad = Ad.find(params[:id])
     @ad.destroy
-    respond_to do |format|
-      format.html { redirect_to ads_url }
-      format.json { head :no_content }
-    end
+    redirect_to "/ads" and return
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ad
-      @ad = Ad.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def ad_params
-      params.require(:ad).permit(:company_name, :duration)
-    end
 end

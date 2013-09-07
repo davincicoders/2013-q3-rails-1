@@ -16,9 +16,9 @@
       <tr>
         <td><%= ad.company_name %></td>
         <td><%= ad.duration %></td>
-        <td><%= link_to 'Show', ad %></td>
-        <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-        <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href="/ads/<%= ad.id %>">Show</a></td>
+        <td><a href="/ads/<%= ad.id %>/edit">Edit</a></td>
+        <td><a href="/ads/<%= ad.id %>" data-method="delete">Destroy</a></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Ad', new_ad_path %>
+<a href="/ads/new">New Ad</a>
