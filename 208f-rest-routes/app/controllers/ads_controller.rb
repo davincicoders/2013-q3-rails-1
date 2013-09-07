@@ -1,5 +1,9 @@
 class AdsController < ApplicationController
 
+  def root
+    redirect_to "/ads" and return
+  end
+
   def index
     @ads = Ad.all
     render :index and return
