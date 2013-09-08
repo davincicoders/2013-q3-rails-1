@@ -17,9 +17,8 @@
         <a href="/admin/houses/<%= house.id %>/edit">Edit</a>
       </td>
       <td>
-        <a href="/admin/houses/<%= house.id %>" data-method="delete">
-          Delete house <%= house.id %>
-        </a>
+        <a href="/admin/houses/<%= house.id %>" data-method="delete"
+           data-confirm="Are you sure?">Delete</a>
       </td>
     </tr>
   <% end %>
