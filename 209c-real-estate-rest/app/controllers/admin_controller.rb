@@ -1,4 +1,4 @@
-class AdminHousesController < ApplicationController
+class AdminController < ApplicationController
 
   before_filter do
     if session[:admin_id] != nil

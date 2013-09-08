@@ -1,4 +1,4 @@
-class HousesController < ApplicationController
+class MainController < ApplicationController
 
   def root
     redirect_to "/list_houses" and return
