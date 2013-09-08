@@ -4,14 +4,14 @@ class MainController < ApplicationController
     redirect_to "/list_houses" and return
   end
 
-  def index
+  def list_houses
     @houses = House.order(:id)
-    render :index and return
+    render :list_houses and return
   end
 
-  def show
+  def show_house
     @house = House.where(id: params[:id]).first
-    render :show and return
+    render :show_house and return
   end
 
 end

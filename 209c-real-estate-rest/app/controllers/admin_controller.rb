@@ -5,21 +5,21 @@ class AdminController < ApplicationController
       @admin = Admin.where(id: session[:admin_id]).first
     else
       flash[:error] = "You must be logged in to see that page."
-      redirect_to "/sessions/new" and return
+      redirect_to "/sessions/login" and return
     end
   end
 
-  def index
+  def list_houses
     @houses = House.order(:id)
-    render :index and return
+    render :list_houses and return
   end
 
-  def edit
+  def edit_house
     @house = House.where(id: params[:id]).first
-    render :edit and return
+    render :edit_house and return
   end
 
-  def update
+  def edit_house_post
     @house                 = House.find(params[:id])
     @house.address         = params[:address]
     @house.city            = params[:city]
@@ -33,16 +33,16 @@ class AdminController < ApplicationController
     if @house.save
       redirect_to "/admin/list_houses" and return
     else
-      render :edit and return
+      render :edit_house and return
     end
   end
 
-  def new
+  def new_house
     @house = House.new
-    render :new and return
+    render :new_house and return
   end
 
-  def create
+  def new_house_post
     @house                 = House.new
     @house.address         = params[:address]
     @house.city            = params[:city]
@@ -56,11 +56,11 @@ class AdminController < ApplicationController
     if @house.save
       redirect_to "/admin/list_houses" and return
     else
-      render :new and return
+      render :new_house and return
     end
   end
 
-  def destroy
+  def delete_house
     house = House.find(params[:id])
     house.destroy
     redirect_to "/admin/list_houses"
