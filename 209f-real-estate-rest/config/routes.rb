@@ -7,10 +7,14 @@ App::Application.routes.draw do
   post   "/sessions"     => "sessions#create"
   delete "/sessions"     => "sessions#destroy"
 
-  get    "/admin/houses"          => "admin_houses#index"
-  get    "/admin/houses/new"      => "admin_houses#new"
-  post   "/admin/houses"          => "admin_houses#create"
-  get    "/admin/houses/:id/edit" => "admin_houses#edit"
-  put    "/admin/houses/:id"      => "admin_houses#update"
-  delete "/admin/houses/:id"      => "admin_houses#destroy"
+  resources "admin_houses", path: "/admin_houses", controller: "admin_houses",
+    only: [:index, :new, :create, :edit, :update, :destroy]
+  # The above resources lines expand to:
+  #   get    "/admin_houses"          => "admin_houses#index"
+  #   get    "/admin_houses/new"      => "admin_houses#new"
+  #   post   "/admin_houses"          => "admin_houses#create"
+  #   get    "/admin_houses/:id/edit" => "admin_houses#edit"
+  #   put    "/admin_houses/:id"      => "admin_houses#update"
+  #   delete "/admin_houses/:id"      => "admin_houses#destroy"
+
 end

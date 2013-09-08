@@ -31,7 +31,7 @@ class AdminHousesController < ApplicationController
     @house.image_url       = params[:image_url]
 
     if @house.save
-      redirect_to "/admin/houses" and return
+      redirect_to "/admin_houses" and return
     else
       render :edit and return
     end
@@ -54,7 +54,7 @@ class AdminHousesController < ApplicationController
     @house.image_url       = params[:image_url]
 
     if @house.save
-      redirect_to "/admin/houses" and return
+      redirect_to "/admin_houses" and return
     else
       render :new and return
     end
@@ -63,7 +63,7 @@ class AdminHousesController < ApplicationController
   def destroy
     house = House.find(params[:id])
     house.destroy
-    redirect_to "/admin/houses"
+    redirect_to "/admin_houses"
   end
 
 end

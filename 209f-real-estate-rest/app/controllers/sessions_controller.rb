@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       render :new and return
     else 
       session[:admin_id] = admin.id
-      redirect_to "/admin/houses" and return
+      redirect_to "/admin_houses" and return
     end
   end
 
