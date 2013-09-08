@@ -5,7 +5,7 @@ class AdminHousesController < ApplicationController
       @admin = Admin.where(id: session[:admin_id]).first
     else
       flash[:error] = "You must be logged in to see that page."
-      redirect_to "/sesions/new" and return
+      redirect_to "/sessions/new" and return
     end
   end
 
