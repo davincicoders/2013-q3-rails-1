@@ -2,7 +2,7 @@
 
 <%== error_messages_for @house %>
 
-<%== form_tag "/admin/houses/#{@house.id}" do %>
+<%== form_tag "/admin/houses/#{@house.id}", method: "PUT" do %>
   <%== render "house_form_fields" %>
 
   <p>

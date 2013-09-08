@@ -1,40 +1,11 @@
-class AdminController < ApplicationController
+class AdminHousesController < ApplicationController
 
-  before_filter except: ["login", "login_post", "logout"] do
+  before_filter do
     if session[:admin_id] != nil
       @admin = Admin.where(id: session[:admin_id]).first
     else
       flash[:error] = "You must be logged in to see that page."
-      session[:attempted_path] = request.path_info
-      redirect_to "/admin/login" and return
-    end
-  end
-
-  def login
-    render :login and return
-  end
-
-  def login_post
-    username = params[:username]
-    password = params[:password]
-    admin    = Admin.where(username: username).first
-
-    if admin == nil
-      flash.now[:error] = "Unknown username"
-      render :login and return
-    elsif admin.authenticate(password) == false
-      flash.now[:error] = "Wrong password"
-      render :login and return
-    else 
-      session[:admin_id] = admin.id
-
-      attempted_path = session[:attempted_path]
-      if attempted_path != nil
-        session[:attempted_path] = nil
-        redirect_to attempted_path and return
-      else
-        redirect_to "/admin/houses" and return
-      end
+      redirect_to "/sesions/new" and return
     end
   end
 
@@ -43,22 +14,13 @@ class AdminController < ApplicationController
     render :index and return
   end
 
-  def index_post
-    House.all.each do |house|
-      if params[:commit] == "Delete house #{house.id}"
-        house.destroy
-      end
-    end
-    redirect_to "/admin/houses" and return
-  end
-
   def edit
     @house = House.where(id: params[:id]).first
     render :edit and return
   end
 
-  def edit_post
-    @house                 = House.where(id: params[:id]).first
+  def update
+    @house                 = House.find(params[:id])
     @house.address         = params[:address]
     @house.city            = params[:city]
     @house.state           = params[:state]
@@ -80,7 +42,7 @@ class AdminController < ApplicationController
     render :new and return
   end
 
-  def new_post
+  def create
     @house                 = House.new
     @house.address         = params[:address]
     @house.city            = params[:city]
@@ -98,9 +60,10 @@ class AdminController < ApplicationController
     end
   end
 
-  def logout
-    session.clear
-    redirect_to "/admin/login" and return
+  def destroy
+    house = House.find(params[:id])
+    house.destroy
+    redirect_to "/admin/houses"
   end
 
 end
