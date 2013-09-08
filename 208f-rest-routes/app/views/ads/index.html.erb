@@ -18,7 +18,8 @@
         <td><%= ad.duration %></td>
         <td><a href="/ads/<%= ad.id %>">Show</a></td>
         <td><a href="/ads/<%= ad.id %>/edit">Edit</a></td>
-        <td><a href="/ads/<%= ad.id %>" data-method="delete">Destroy</a></td>
+        <td><a href="/ads/<%= ad.id %>" data-method="delete"
+               data-confirm="Are you sure?">Destroy</a></td>
       </tr>
     <% end %>
   </tbody>
