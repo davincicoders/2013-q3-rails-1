@@ -10,7 +10,7 @@
 
 <% if @admin %>
   You are logged in as <b><%= @admin.username %></b>.
-  <a href="/sessions" data-method="delete">Logout</a>
+  <a href="/sessions/<%= session.id %>" data-method="delete">Logout</a>
   <hr>
 <% end %>
 
