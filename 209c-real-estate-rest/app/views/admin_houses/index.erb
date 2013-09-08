@@ -1,0 +1,31 @@
+<h1>Index of houses</h1>
+
+<table border="1">
+  <tr>
+    <th>ID #</th>
+    <th>Address</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for house in @houses %>
+    <tr>
+      <td><%= house.id %></td>
+      <td><%= house.address %></td>
+      <td><%= house.price %></td>
+      <td>
+        <a href="/admin/edit_house/<%= house.id %>">Edit</a>
+      </td>
+      <td>
+        <a href="/admin/delete_house/<%= house.id %>">
+          Delete house <%= house.id %>
+        </a>
+      </td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="5">
+      <a href="/admin/new_house">Add new house</a>
+    </td>
+  </tr>
+</table>
