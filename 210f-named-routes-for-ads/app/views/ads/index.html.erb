@@ -18,7 +18,9 @@
         <td><%= ad.duration %></td>
         <td><%= link_to "Show", show_ad_path(ad) %></td>
         <td><%= link_to "Edit", edit_ad_path(ad) %></td>
-        <td><%= link_to "Destroy", destroy_ad_path(ad) %></a></td>
+        <td><%= link_to "Destroy", destroy_ad_path(ad),
+          "data-confirm" => "Are you sure?",
+          "data-method" => "delete" %></a></td>
       </tr>
     <% end %>
   </tbody>
