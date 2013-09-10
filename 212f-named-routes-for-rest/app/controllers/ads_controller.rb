@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
 
   def root
-    redirect_to "/ads" and return
+    redirect_to ads_path and return
   end
 
   def index
@@ -31,7 +31,7 @@ class AdsController < ApplicationController
 
     if @ad.save == true
       flash[:notice] = "Ad was successfully created."
-      redirect_to "/ads/#{@ad.id}"
+      redirect_to ad_path(@ad)
     else
       render :new and return
     end
@@ -44,7 +44,7 @@ class AdsController < ApplicationController
 
     if @ad.save == true
       flash[:notice] = "Ad was successfully updated."
-      redirect_to "/ads/#{@ad.id}"
+      redirect_to ad_path(@ad)
     else
       render :edit and return
     end
@@ -53,7 +53,7 @@ class AdsController < ApplicationController
   def destroy
     @ad = Ad.find(params[:id])
     @ad.destroy
-    redirect_to "/ads" and return
+    redirect_to ads_path and return
   end
 
 end
