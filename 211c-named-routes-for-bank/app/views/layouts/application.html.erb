@@ -14,6 +14,17 @@
   </div>
 <% end %>
 
+<% if @user != nil %>
+  <a href="/accounts">accounts</a>
+  <a href="/location">location</a>
+  <a href="/rates">rates</a>
+  <br>
+
+  Logged in as <%= @user.username %>;
+  <a href="/logout">logout</a>
+
+<% end %>
+
 <%= yield %>
 
 </body>
