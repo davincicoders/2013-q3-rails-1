@@ -10,5 +10,5 @@
   <%= @ad.duration %>
 </p>
 
-<a href="/edit_ad/<%= @ad.id %>">Edit</a> |
-<a href="/list_ads">Back</a>
+<%= link_to "Edit", edit_ad_path(@ad) %> |
+<%= link_to "Back", list_ads_path %>

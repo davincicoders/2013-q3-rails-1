@@ -2,7 +2,7 @@
 
 <%== error_messages_for @ad %>
 
-<%== form_tag "/edit_ad/#{@ad.id}" do %>
+<%== form_tag edit_ad_path(@ad) do %>
   <div class="field">
     <%= label_tag :company_name %><br>
     <%= text_field_tag :company_name, @ad.company_name %>
@@ -16,5 +16,5 @@
   </div>
 <% end %>
 
-<a href="/show_ad/<%= @ad.id %>">Show</a> |
-<a href="/list_ads">Back</a>
+<%= link_to "Show", show_ad_path(@ad) %> |
+<%= link_to "Back", list_ads_path %>
