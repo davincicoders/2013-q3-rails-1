@@ -1,0 +1,30 @@
+<h1>Listing ads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Duration</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.company_name %></td>
+        <td><%= ad.duration %></td>
+        <td><a href="/ads/<%= ad.id %>">Show</a></td>
+        <td><a href="/ads/<%= ad.id %>/edit">Edit</a></td>
+        <td><a href="/ads/<%= ad.id %>" data-method="delete"
+               data-confirm="Are you sure?">Destroy</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a href="/ads/new">New Ad</a>

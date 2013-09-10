@@ -1,0 +1,20 @@
+<h1>Editing ad</h1>
+
+<%== error_messages_for @ad %>
+
+<%== form_tag "/ads/#{@ad.id}", method: "PUT" do %>
+  <div class="field">
+    <%= label_tag :company_name %><br>
+    <%= text_field_tag :company_name, @ad.company_name %>
+  </div>
+  <div class="field">
+    <%= label_tag :duration %><br>
+    <%= text_field_tag :duration, @ad.duration %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Update" %>
+  </div>
+<% end %>
+
+<a href="/ads/<%= @ad.id %>">Show</a> |
+<a href="/ads">Back</a>
