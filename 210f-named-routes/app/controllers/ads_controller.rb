@@ -31,7 +31,7 @@ class AdsController < ApplicationController
 
     if @ad.save == true
       flash[:notice] = "Ad was successfully created."
-      redirect_to show_ad_path(@ad.id)
+      redirect_to show_ad_path(@ad)
     else
       render :new and return
     end
@@ -44,7 +44,7 @@ class AdsController < ApplicationController
 
     if @ad.save == true
       flash[:notice] = "Ad was successfully updated."
-      redirect_to show_ad_path(@ad.id)
+      redirect_to show_ad_path(@ad)
     else
       render :edit and return
     end
