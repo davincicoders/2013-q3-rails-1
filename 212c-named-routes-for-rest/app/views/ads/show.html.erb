@@ -1,0 +1,14 @@
+<p id="notice"><%= flash[:notice] %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @ad.company_name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @ad.duration %>
+</p>
+
+<a href="/ads/<%= @ad.id %>/edit">Edit</a> |
+<a href="/ads">Back</a>
