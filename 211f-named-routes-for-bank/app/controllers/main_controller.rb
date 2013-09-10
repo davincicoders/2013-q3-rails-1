@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def root
-    redirect_to "/login" and return
+    redirect_to login_path and return
   end
 
   def login
@@ -22,7 +22,7 @@ class MainController < ApplicationController
       render :login and return
     else
       session[:user_id] = found_user.id
-      redirect_to "/accounts" and return
+      redirect_to accounts_path and return
     end
   end
 
@@ -43,7 +43,7 @@ class MainController < ApplicationController
 
   def logout
     session.clear
-    redirect_to "/login" and return
+    redirect_to login_path and return
   end
 
 end
