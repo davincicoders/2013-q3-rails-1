@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
 
   def root
-    redirect_to "/houses" and return
+    redirect_to houses_path and return
   end
 
   def index

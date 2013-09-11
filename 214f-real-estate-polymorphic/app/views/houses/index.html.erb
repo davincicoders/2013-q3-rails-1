@@ -1,5 +1,5 @@
 <div style='float:right'>
-  <a href="/sessions/new">Login</a>
+  <%= link_to "Login", new_session_path %>
 </div>
 
 <h1>Houses for sale</h1>
@@ -13,9 +13,6 @@
       <%= house.price %>
     </div>
 
-    <a href="/houses/<%= house.id %>">
-      <%= house.address %>
-    </a>
+    <%= link_to house.address, house %>
   </div>
 <% end %>
-

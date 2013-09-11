@@ -17,13 +17,13 @@ class SessionsController < ApplicationController
       render :new and return
     else 
       session[:admin_id] = admin.id
-      redirect_to "/admin_houses" and return
+      redirect_to admin_houses_path and return
     end
   end
 
   def destroy
     session.clear
-    redirect_to "/sessions/new" and return
+    redirect_to new_session_path and return
   end
 
 end

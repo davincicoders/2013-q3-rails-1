@@ -14,17 +14,17 @@
       <td><%= house.address %></td>
       <td><%= house.price %></td>
       <td>
-        <a href="/admin_houses/<%= house.id %>/edit">Edit</a>
+        <%= link_to "Edit", edit_admin_house_path(house) %>
       </td>
       <td>
-        <a href="/admin_houses/<%= house.id %>" data-method="delete"
-           data-confirm="Are you sure?">Delete</a>
+        <%= link_to "Delete", admin_house_path(house), "data-method"=>"delete",
+              "data-confirm"=>"Are you sure?" %>
       </td>
     </tr>
   <% end %>
   <tr>
     <td colspan="5">
-      <a href="/admin_houses/new">Add new house</a>
+      <%= link_to "Add new house", new_admin_house_path %>
     </td>
   </tr>
 </table>

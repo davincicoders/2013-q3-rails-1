@@ -5,7 +5,7 @@ class AdminHousesController < ApplicationController
       @admin = Admin.where(id: session[:admin_id]).first
     else
       flash[:error] = "You must be logged in to see that page."
-      redirect_to "/sessions/new" and return
+      redirect_to new_session_path and return
     end
   end
 
@@ -31,7 +31,7 @@ class AdminHousesController < ApplicationController
     @house.image_url       = params[:image_url]
 
     if @house.save
-      redirect_to "/admin_houses" and return
+      redirect_to admin_houses_path and return
     else
       render :edit and return
     end
@@ -54,7 +54,7 @@ class AdminHousesController < ApplicationController
     @house.image_url       = params[:image_url]
 
     if @house.save
-      redirect_to "/admin_houses" and return
+      redirect_to admin_houses_path and return
     else
       render :new and return
     end
@@ -63,7 +63,7 @@ class AdminHousesController < ApplicationController
   def destroy
     house = House.find(params[:id])
     house.destroy
-    redirect_to "/admin_houses"
+    redirect_to admin_houses_path and return
   end
 
 end
