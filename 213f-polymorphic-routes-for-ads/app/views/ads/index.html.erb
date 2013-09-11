@@ -16,9 +16,9 @@
       <tr>
         <td><%= ad.company_name %></td>
         <td><%= ad.duration %></td>
-        <td><%= link_to "Show", ad_path(ad) %></td>
+        <td><%= link_to "Show", ad %></td>
         <td><%= link_to "Edit", edit_ad_path(ad) %></td>
-        <td><%= link_to "Destroy", ad_path(ad), "data-method"=>"delete",
+        <td><%= link_to "Destroy", ad, "data-method"=>"delete",
                   "data-confirm"=>"Are you sure?" %></td>
       </tr>
     <% end %>

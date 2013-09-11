@@ -2,7 +2,7 @@
 
 <%== error_messages_for @ad %>
 
-<%== form_tag ad_path(@ad), method: "PUT" do %>
+<%== form_tag @ad, method: "PUT" do %>
   <div class="field">
     <%= label_tag :company_name %><br>
     <%= text_field_tag :company_name, @ad.company_name %>
@@ -16,5 +16,5 @@
   </div>
 <% end %>
 
-<%= link_to "Show", ad_path(@ad) %> |
+<%= link_to "Show", @ad %> |
 <%= link_to "Back", ads_path %>
