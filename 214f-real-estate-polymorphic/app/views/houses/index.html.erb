@@ -1,0 +1,21 @@
+<div style='float:right'>
+  <a href="/sessions/new">Login</a>
+</div>
+
+<h1>Houses for sale</h1>
+
+<% @houses.each do |house| %>
+  <div style="float:left;margin-right:30px">
+    <img src="<%= house.image_url %>" width="250" height="188">
+    <br>
+
+    <div style="float:right">
+      <%= house.price %>
+    </div>
+
+    <a href="/houses/<%= house.id %>">
+      <%= house.address %>
+    </a>
+  </div>
+<% end %>
+

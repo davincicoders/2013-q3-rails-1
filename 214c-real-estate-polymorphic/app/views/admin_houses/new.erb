@@ -1,0 +1,57 @@
+<h1>Add new house</h1>
+
+<%== error_messages_for @house %>
+
+<%== form_tag "/admin_houses" do %>
+  <p>
+    Address
+    <br>
+    <%== text_field_tag :address, @house.address %>
+  </p>
+
+  <p>
+    Price
+    <br>
+    <%== text_field_tag :price, @house.price %>
+  </p>
+
+  <p>
+    Bedrooms
+    <br>
+    <%== text_field_tag :num_bedrooms, @house.num_bedrooms %>
+  </p>
+
+  <p>
+    Image URL
+    <br>
+    <%== text_field_tag :image_url, @house.image_url, size: 80 %>
+  </p>
+
+  <p>
+    City
+    <br>
+    <%== text_field_tag :city, @house.city %>
+  </p>
+
+  <p>
+    State
+    <br>
+    <%== text_field_tag :state, @house.state %>
+  </p>
+
+  <p>
+    Number of stories
+    <br>
+    <%== text_field_tag :num_stories, @house.num_stories %>
+  </p>
+
+  <p>
+    Number of square feet
+    <br>
+    <%== text_field_tag :num_square_feet, @house.num_square_feet %>
+  </p>
+
+  <p>
+    <%== submit_tag "Create" %>
+  <p>
+<% end %>
