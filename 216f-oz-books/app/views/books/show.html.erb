@@ -1,0 +1,47 @@
+<div style='width:700px; margin: 0 auto;'>
+  <div style='float:left'>
+    <%= image_tag @book.cover_filename, width: 300, height: 400 %>
+  </div>
+  <div style='width:300px; height:300px; float:left; padding: 0 20px'>
+    <p>
+      <b>Title</b>
+      <br>
+      <i><%= @book.title %></i>
+    </p>
+    <p>
+      #<%= @book.number %> in the Oz series
+    </p>
+    <p>
+      <b>Published</b>
+      <br>
+      <%= @book.year %> by <%= @book.publisher %>
+    </p>
+    <p>
+      <b>Plot summary</b>
+      <br>
+      <%= @book.summary %>
+    </p>
+  </div>
+  <br clear='left'>
+  <br>
+
+  <div style='width: 520px; margin: 0 auto;'>
+    <% previous_book = Book.where(number: @book.number - 1).first %>
+    <% if previous_book != nil %>
+      <div style='float:left'>
+        <h2 style='margin:0'>Earlier in Oz...</h2>
+        <%= render partial: 'little', locals: { book: previous_book } %>
+      </div>
+    <% end %>
+    
+    <% next_book = Book.where(number: @book.number + 1).first %>
+    <% if next_book != nil %>
+      <div style='float:left'>
+        <h2 style='margin:0'>Continue the story with...</h2>
+        <%= render partial: 'little', locals: { book: next_book } %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br clear='all'>
+<br>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  title: MyString
+  year: 1
+  publisher: MyString
+  summary: MyText
+  cover_filename: MyString
+
+two:
+  number: 1
+  title: MyString
+  year: 1
+  publisher: MyString
+  summary: MyText
+  cover_filename: MyString
