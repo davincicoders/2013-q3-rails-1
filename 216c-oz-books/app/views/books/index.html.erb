@@ -1,0 +1,9 @@
+<div style='width: 600px; height: 300px; margin: 0 auto'>
+  <h1 style='text-align:center'>The Oz series by L. Frank Baum</h1>
+
+  <% @books.each do |book| %>
+    <div style='float: left'>
+      <%= render partial: "little", locals: { book: book } %>
+    </div>
+  <% end %>
+</div>
