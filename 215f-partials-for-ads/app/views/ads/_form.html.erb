@@ -1,0 +1,15 @@
+<%== error_messages_for ad %>
+
+<%== form_tag ad, method: form_method do %>
+  <div class="field">
+    <%= label_tag :company_name %><br>
+    <%= text_field_tag :company_name, ad.company_name %>
+  </div>
+  <div class="field">
+    <%= label_tag :duration %><br>
+    <%= text_field_tag :duration, ad.duration %>
+  </div>
+  <div class="actions">
+    <%= submit_tag submit_button_text %>
+  </div>
+<% end %>

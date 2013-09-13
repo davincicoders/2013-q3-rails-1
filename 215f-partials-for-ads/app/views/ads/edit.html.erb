@@ -1,20 +1,10 @@
 <h1>Editing ad</h1>
 
-<%== error_messages_for @ad %>
-
-<%== form_tag @ad, method: "PUT" do %>
-  <div class="field">
-    <%= label_tag :company_name %><br>
-    <%= text_field_tag :company_name, @ad.company_name %>
-  </div>
-  <div class="field">
-    <%= label_tag :duration %><br>
-    <%= text_field_tag :duration, @ad.duration %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Update" %>
-  </div>
-<% end %>
+<%= render partial: "form", locals: {
+  ad:                 @ad,
+  form_method:        "PUT",
+  submit_button_text: "Update"
+} %>
 
 <%= link_to "Show", @ad %> |
 <%= link_to "Back", ads_path %>
