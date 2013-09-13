@@ -25,9 +25,8 @@ class AdsController < ApplicationController
   end
 
   def create
-    @ad              = Ad.new
-    @ad.company_name = params[:company_name]
-    @ad.duration     = params[:duration]
+    ad_params = params[:ad].permit(:company_name, :duration)
+    @ad       = Ad.new(ad_params)
 
     if @ad.save == true
       flash[:notice] = "Ad was successfully created."
@@ -38,11 +37,10 @@ class AdsController < ApplicationController
   end
 
   def update
-    @ad              = Ad.find(params[:id])
-    @ad.company_name = params[:company_name]
-    @ad.duration     = params[:duration]
+    ad_params = params[:ad].permit(:company_name, :duration)
+    @ad = Ad.find(params[:id])
 
-    if @ad.save == true
+    if @ad.update(ad_params) == true
       flash[:notice] = "Ad was successfully updated."
       redirect_to @ad
     else

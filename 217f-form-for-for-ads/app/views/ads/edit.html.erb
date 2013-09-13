@@ -2,17 +2,17 @@
 
 <%== error_messages_for @ad %>
 
-<%== form_tag @ad, method: "PUT" do %>
+<%== form_for @ad do |f| %>
   <div class="field">
-    <%= label_tag :company_name %><br>
-    <%= text_field_tag :company_name, @ad.company_name %>
+    <%= f.label :company_name %><br>
+    <%= f.text_field :company_name %>
   </div>
   <div class="field">
-    <%= label_tag :duration %><br>
-    <%= text_field_tag :duration, @ad.duration %>
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
   </div>
   <div class="actions">
-    <%= submit_tag "Update" %>
+    <%= f.submit %>
   </div>
 <% end %>
 
