@@ -1,0 +1,9 @@
+<%= form_tag event, method: form_method do %>
+  <p>
+    Name<br>
+    <%= text_field_tag :name, event.name %>
+  </p>
+  <p>
+    <%= submit_tag "Save" %>
+  </p>
+<% end %>
