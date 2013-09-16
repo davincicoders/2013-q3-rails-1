@@ -3,11 +3,15 @@
 <table border='1'>
   <tr>
     <th>ID</th>
+    <td>Start date</td>
+    <td>End date</td>
     <th>Name</th>
   </tr>
   <% @events.each do |event| %>
     <tr>
       <td><%= event.id %></td>
+      <td><%= event.start_date %></td>
+      <td><%= event.end_date %></td>
       <td><%= event.name %></td>
       <td><%= link_to "Edit", edit_event_path(event) %></td>
     </tr>
