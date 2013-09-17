@@ -1,0 +1,25 @@
+form.login {
+  border: 1px gray dotted;
+  padding: 20px;
+  margin-right: 20px;
+}
+form.login h2 {
+  margin: 0;
+}
+form.login label {
+  display: inline-block;
+  width: 70px;
+}
+
+.flash-success {
+  background-color: #dff0d8;
+  border: 1px #d6e9c6 solid;
+  color: #468847;
+  padding: 15px;
+}
+.flash-error {
+  background-color: #f2dede;
+  border: 1px #eed3d7 solid;
+  color: #b94a48;
+  padding: 15px;
+}
