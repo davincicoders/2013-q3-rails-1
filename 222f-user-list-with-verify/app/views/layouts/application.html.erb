@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<% if flash[:remind_to_verify_email] %>
+  <div class="flash flash-alert">
+    Please click the link in the email you were sent to verify your email address.
+    <%= form_tag resend_verification_email_path do %>
+      <%= hidden_field_tag :afterwards_go_to, request.path_info %>
+      <%= submit_tag "Resend email" %>
+    <% end %>
+  </div>
+  <% flash.delete(:remind_to_verify_email) %>
+<% end %>
+
 <% flash.keys.each do |key| %>
   <div class="flash flash-<%= key %>">
     <%= flash[key] %>

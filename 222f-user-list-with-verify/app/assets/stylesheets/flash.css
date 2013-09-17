@@ -10,3 +10,9 @@
   color: #b94a48;
   padding: 15px;
 }
+.flash-alert {
+  background-color: #ffffcc;
+  border: 1px #aaaa00 solid;
+  color: #aaaa00;
+  padding: 15px;
+}
