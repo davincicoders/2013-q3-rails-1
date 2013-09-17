@@ -1,0 +1,6 @@
+<h1>Edit Event #<%= @event.id %></h1>
+
+<%= render partial: "form", locals: {
+  event: @event,
+  form_method: "put"
+} %>
