@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% flash.keys.each do |key| %>
+  <div class="flash flash-<%= key %>">
+    <%= flash[key] %>
+  </div>
+<% end %>
+
+<% if @logged_in_user %>
+  <%= form_tag logout_path do %>
+    You are logged in as <b><%= @logged_in_user.email %></b>.
+    <%= submit_tag "Logout" %>
+  <% end %>
+  <hr>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
