@@ -21,6 +21,13 @@ class UsersController < ApplicationController
     if @user.save
       session[:logged_in_user_id] = @user.id
       flash[:success] = "Your account has been created"
+
+      Pony.mail(
+        to:      @user.email,
+        subject: "Thanks for registering",
+        body:    "You can login at #{users_url}."
+      )
+
       redirect_to users_path and return
     else
       render :new and return
