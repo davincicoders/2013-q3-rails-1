@@ -1,0 +1,11 @@
+<h1>Add new house</h1>
+
+<%== error_messages_for @house %>
+
+<%== form_tag "/admin/houses/new" do %>
+  <%== render "house_form_fields" %>
+
+  <p>
+    <%== submit_tag "Create" %>
+  <p>
+<% end %>
