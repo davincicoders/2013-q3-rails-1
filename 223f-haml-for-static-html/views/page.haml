@@ -1,0 +1,34 @@
+%h1 Bootstrap grid examples
+.lead Basic grid layouts to get you familiar with building within the Bootstrap grid system.
+
+%h3 Three equal columns
+%p
+  Get three equal-width columns
+  %strong starting at desktops and scaling to large desktops
+  = "."
+  On mobile devices, tablets and below, the columns will automatically stack.
+.row
+  .col-md-4 .col-md-4
+  .col-md-4 .col-md-4
+  .col-md-4 .col-md-4
+
+%h3 Three unequal columns
+%p
+  Get three columns
+  %strong starting at desktops and scaling to large desktops
+  of various widths. Remember, grid columns should add up to twelve for a
+  single horizontal block. More than that, and columns start stacking no
+  matter the viewport.
+.row
+  .col-md-3 .col-md-3
+  .col-md-6 .col-md-6
+  .col-md-3 .col-md-3
+
+%h3 Two columns
+%p
+  Get two columns
+  %strong starting at desktops and scaling to large desktops
+  = "."
+.row
+  .col-md-8 .col-md-8
+  .col-md-4 .col-md-4

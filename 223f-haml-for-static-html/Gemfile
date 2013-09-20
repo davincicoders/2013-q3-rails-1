@@ -1,0 +1,21 @@
+source 'https://rubygems.org'
+
+gem 'pry-debugger', group: :development
+gem 'pry-doc', group: :development
+
+gem 'activerecord', '~> 3.2', require: 'active_record'
+gem 'activerecord-postgresql-adapter'
+
+gem 'standalone_migrations',
+  git: 'https://github.com/thuss/standalone-migrations', tag: "v2.1.1"
+
+gem 'sinatra'
+gem 'erubis' # for automatic escaping of HTML
+gem 'actionpack', require: 'action_view' # for Rails form helpers
+gem 'dynamic_form' # for error_messages_for
+
+gem 'rack-flash3', require: 'rack-flash'
+gem 'sinatra-footnotes'
+gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'haml'
