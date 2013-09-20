@@ -1,0 +1,23 @@
+= form_tag "/admin/houses" do
+
+  %h1 Index of houses
+  
+  %table(border="1")
+    %tr
+      %th ID #
+      %th Address
+      %th Price
+      %th
+      %th
+    - @houses.each do |house|
+      %tr
+        %td= house.id 
+        %td= house.address
+        %td= house.price
+        %td 
+          %a(href="/admin/houses/#{house.id}") Edit
+        %td
+          = submit_tag "Delete house #{house.id}"
+    %tr
+      %td(colspan="5")
+        %a(href="/admin/houses/new") Add new house

@@ -1,0 +1,9 @@
+%h1 Add new house
+
+= error_messages_for @house
+
+= form_tag "/admin/houses/new" do
+  = render partial: "form"
+
+  %p
+    = submit_tag "Create"

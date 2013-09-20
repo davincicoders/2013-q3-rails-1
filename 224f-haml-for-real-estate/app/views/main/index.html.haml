@@ -1,0 +1,11 @@
+.pull-right
+  %a(href="/admin/login") Login
+
+%h1 Houses for sale
+
+- @houses.each do |house|
+  .house
+    %img(src="#{house.image_url}" width="250" height="188")
+    %br
+    .pull-right= house.price
+    %a(href="/houses/#{house.id}")= house.address

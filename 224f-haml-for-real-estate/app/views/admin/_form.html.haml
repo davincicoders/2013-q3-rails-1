@@ -1,0 +1,44 @@
+- if @house.id
+  %p
+    %b ID #:
+    = @house.id
+
+%p
+  Address
+  %br
+  = text_field_tag :address, @house.address
+
+%p
+  Price
+  %br
+  = text_field_tag :price, @house.price
+
+%p
+  Bedrooms
+  %br
+  = text_field_tag :num_bedrooms, @house.num_bedrooms
+
+%p
+  Image URL
+  %br
+  = text_field_tag :image_url, @house.image_url, size: 80
+
+%p
+  City
+  %br
+  = text_field_tag :city, @house.city
+
+%p
+  State
+  %br
+  = text_field_tag :state, @house.state
+
+%p
+  Number of stories
+  %br
+  = text_field_tag :num_stories, @house.num_stories
+
+%p
+  Number of square feet
+  %br
+  = text_field_tag :num_square_feet, @house.num_square_feet

@@ -1,0 +1,15 @@
+%h1 Login
+
+= form_tag "/admin/login" do
+  %p
+    Username
+    %br
+    = text_field_tag :username
+  %p
+    Password
+    %br
+    = password_field_tag :password
+  %p
+    = submit_tag "Login"
+
+%p You can login with bob/123 or sue/234

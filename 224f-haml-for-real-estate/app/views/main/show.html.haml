@@ -1,0 +1,17 @@
+%h1 #{@house.address}, #{@house.city}, CO
+
+%img(src="#{@house.image_url}" width="500" height="375")
+
+%h2= @house.price
+
+%p
+  %b Bedrooms:
+  = @house.num_bedrooms
+
+%p
+  %b Stories:
+  = @house.num_stories
+
+%p
+  %b Square feet:
+  = @house.num_square_feet

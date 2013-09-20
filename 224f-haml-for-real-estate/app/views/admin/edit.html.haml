@@ -1,0 +1,9 @@
+%h1 Edit house ##{@house.id}
+
+= error_messages_for @house
+
+= form_tag "/admin/houses/#{@house.id}" do
+  = render partial: "form"
+
+  %p
+    = submit_tag "Update"
