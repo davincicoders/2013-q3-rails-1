@@ -1,15 +1,15 @@
-<div style='float:right'>
+<div class="pull-right">
   <a href="/admin/login">Login</a>
 </div>
 
 <h1>Houses for sale</h1>
 
 <% @houses.each do |house| %>
-  <div style="float:left;margin-right:30px">
+  <div class="house">
     <img src="<%= house.image_url %>" width="250" height="188">
     <br>
 
-    <div style="float:right">
+    <div class="pull-right">
       <%= house.price %>
     </div>
 

@@ -3,7 +3,7 @@
 <%== error_messages_for @house %>
 
 <%== form_tag "/admin/houses/#{@house.id}" do %>
-  <%== render "house_form_fields" %>
+  <%== render partial: "form" %>
 
   <p>
     <%== submit_tag "Update" %>
