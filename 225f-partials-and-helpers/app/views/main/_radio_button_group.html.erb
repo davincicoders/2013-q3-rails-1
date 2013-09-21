@@ -1,0 +1,14 @@
+<div class='form-group'>
+
+  <%= label_tag field %>
+
+  <% values.each do |value| %>
+
+    <div class='radio'>
+      <%= radio_button_tag field, value %>
+      <%= label_tag "#{field}_#{value}", value.to_s.humanize %>
+    </div>
+
+  <% end %>
+
+</div>

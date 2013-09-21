@@ -9,30 +9,7 @@
 <body>
 
 <div class='container' style='max-width: 730px'>
-  <nav class='navbar navbar-static-top' role='navigation'>
-    <div style='position: absolute; top: 11px'>
-      <a class='navbar-brand' href='#' style='padding: 0'>
-        <%= image_tag "logo.png" %>
-      </a>
-    </div>
-    <ul class='nav nav-tabs'>
-      <li class='pull-right <%= if params[:action] == "users" then "active" end %>'>
-        <a href='/users'>Users</a>
-      </li>
-      <li class='pull-right <%= if params[:action] == "form2" then "active" end %>'>
-        <a href='/form2'>Form 2</a>
-      </li>
-      <li class='pull-right <%= if params[:action] == "form1" then "active" end %>'>
-        <a href='/form1'>Form 1</a>
-      </li>
-      <li class='pull-right <%= if params[:action] == "calendar" then "active" end %>'>
-        <a href='/calendar'>Calendar</a>
-      </li>
-      <li class='pull-right <%= if params[:action] == "symbols" then "active" end %>'>
-        <a href='/symbols'>Symbols</a>
-      </li>
-    </ul>
-  </nav>
+  <%= render "shared/navbar" %>
 
   <% flash.keys.each do |key| %>
     <div class="flash flash-<%= key %>">
@@ -42,11 +19,7 @@
   
   <%= yield %>
 
-  <hr>
-  <div class='footer'>
-    The DaVinci Institute is a 501(c)(3) non-profit
-    under the laws of the state of Colorado.
-  </div>
+  <%= render "shared/footer" %>
 
 </div><!-- end .container -->
 

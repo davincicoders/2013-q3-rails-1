@@ -2,11 +2,7 @@
   <% ending_of_week = beginning_of_week.advance(days: 6) %>
   <% beginning_of_week.step(ending_of_week, 1) do |date| %>
     <% if date <= @to_date %>
-      <div class="day">
-        <div class="day-number">
-          <%= date.strftime("%-d") %>
-        </div>
-      </div>
+      <%= render partial: "day", locals: { date: date } %>
     <% end %>
   <% end %>
   <br clear='all'>

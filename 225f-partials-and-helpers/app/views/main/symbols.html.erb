@@ -1,19 +1,11 @@
 <h2>Volume controls</h2>
 
-<button class="btn btn-default">
-  <span class="glyphicon glyphicon-volume-off"></span>
-</button>
-
-<button class="btn btn-default">
-  <span class="glyphicon glyphicon-volume-down"></span>
-</button>
-
-<button class="btn btn-default">
-  <span class="glyphicon glyphicon-volume-up"></span>
-</button>
+<%= glyphicon_button "off" %>
+<%= glyphicon_button "down" %>
+<%= glyphicon_button "up" %>
 
 <h2>Example HTML entities</h2>
 
-<p>6 &times; 3 = 18</p>
+<p>6 <%= times_symbol %> 3 = 18</p>
 
-<p>6 &divide; 3 = 2</p>
+<p>6 <%= divided_by_symbol %> 3 = 2</p>

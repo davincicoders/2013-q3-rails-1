@@ -1,0 +1,22 @@
+<nav class='navbar navbar-static-top' role='navigation'>
+  <div style='position: absolute; top: 11px'>
+    <%= render "shared/logo" %>
+  </div>
+  <ul class='nav nav-tabs'>
+    <%# render partial: "shared/navbar_tab",
+          locals: { route: "/users",    action: "users"    } %>
+    <%# render partial: "shared/navbar_tab",
+          locals: { route: "/form2",    action: "form2"    } %>
+    <%# render partial: "shared/navbar_tab",
+          locals: { route: "/form1",    action: "form1"    } %>
+    <%# render partial: "shared/navbar_tab",
+          locals: { route: "/calendar", action: "calendar" } %>
+    <%# render partial: "shared/navbar_tab",
+          locals: { route: "/symbols",  action: "symbols"  } %>
+    <%= navbar_tab("/users",    "users")    %>
+    <%= navbar_tab("/form2",    "form2")    %>
+    <%= navbar_tab("/form1",    "form1")    %>
+    <%= navbar_tab("/calendar", "calendar") %>
+    <%= navbar_tab("/symbols",  "symbols")  %>
+  </ul>
+</nav>
