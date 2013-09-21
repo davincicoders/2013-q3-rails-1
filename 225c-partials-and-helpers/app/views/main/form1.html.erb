@@ -1,0 +1,54 @@
+<form>
+
+<div class='form-group'>
+  <%= label_tag :first_name %>
+  <%= text_field_tag :first_name, "", class: "form-control" %>
+</div>
+
+<div class='form-group'>
+  <%= label_tag :email %>
+  <%= text_field_tag :email, "", class: "form-control" %>
+</div>
+
+<div class='form-group'>
+  <%= label_tag :description %>
+  <%= text_area_tag :description, "", class: "form-control" %>
+</div>
+
+<div class='form-group'>
+  <%= label_tag :gender %>
+  <div class='radio'>
+    <%= radio_button_tag :gender, :male %>
+    <%= label_tag :gender_male, "Male" %>
+  </div>
+  <div class='radio'>
+    <%= radio_button_tag :gender, :female %>
+    <%= label_tag :gender_female, "Female" %>
+  </div>
+</div>
+
+<div class='form-group'>
+  <%= label_tag :class_year %>
+  <%= select_tag :class_year,
+    options_for_select(["2012", "2013", "Other"]),
+    prompt: "Choose year", class: "form-control" %>
+</div>
+
+<div class='form-group'>
+  <label>Marketing</label>
+  <div class='checkbox'>
+    <%= check_box_tag :marketing_us %>
+    <%= label_tag :marketing_us, "Please email me relevant marketing offers" %>
+  </div>
+  <div class='checkbox'>
+    <%= check_box_tag :marketing_3rd_party %>
+    <%= label_tag :marketing_3rd_party,
+      "Please email me relevant marketing offers from third parties" %>
+  </div>
+</div>
+
+<div class='form-group'>
+  <%= submit_tag "Submit", class: "btn btn-primary btn-lg btn-block" %>
+</div>
+
+</form>
