@@ -1,0 +1,36 @@
+<h2>Administrators</h2>
+<ul>
+  <% User.where(is_admin: true).all.each do |user| %>
+    <li><%= user.first_name %> <%= user.last_name %></li>
+  <% end %>
+</ul>
+
+<h2>Non-administrators</h2>
+<ul>
+  <% User.where(is_admin: false).all.each do |user| %>
+    <li><%= user.first_name %> <%= user.last_name %></li>
+  <% end %>
+</ul>
+
+<h2>Age of each user</h2>
+<ul>
+  <% User.all.each do |user| %>
+    <% from_date = user.birth_date %>
+    <% to_date   = Date.new(2013, 9, 21) %>
+    <% age = (to_date - from_date).to_i / 365  %>
+
+    <li>
+      <%= user.first_name %> <%= user.last_name %> is
+
+      <% if age >= 21 %>
+        <%= age %>
+      <% else %>
+        <span class='under-21'><%= age %></span>
+      <% end %>
+
+      years old
+
+      (from <%= from_date.strftime('%Y-%m-%d') %> to <%= to_date.strftime('%Y-%m-%d') %>)
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class='container' style='max-width: 730px'>
+  <nav class='navbar navbar-static-top' role='navigation'>
+    <a class='navbar-brand' href='#' style='padding: 11px 0 0 0; margin: 0'>
+      <%= image_tag "logo.png" %>
+    </a>
+    <ul class='nav nav-tabs'>
+      <li class='pull-right <%= if params[:action] == "users" then "active" end %>'>
+        <a href='/users'>Users</a>
+      </li>
+      <li class='pull-right <%= if params[:action] == "form2" then "active" end %>'>
+        <a href='/form2'>Form 2</a>
+      </li>
+      <li class='pull-right <%= if params[:action] == "form1" then "active" end %>'>
+        <a href='/form1'>Form 1</a>
+      </li>
+      <li class='pull-right <%= if params[:action] == "calendar" then "active" end %>'>
+        <a href='/calendar'>Calendar</a>
+      </li>
+      <li class='pull-right <%= if params[:action] == "symbols" then "active" end %>'>
+        <a href='/symbols'>Symbols</a>
+      </li>
+    </ul>
+  </nav>
+
+  <% flash.keys.each do |key| %>
+    <div class="flash flash-<%= key %>">
+      <%= flash[key] %>
+    </div>
+  <% end %>
+  
+  <%= yield %>
+
+  <hr>
+  <div class='footer'>
+    The DaVinci Institute is a 501(c)(3) non-profit
+    under the laws of the state of Colorado.
+  </div>
+
+</div><!-- end .container -->
+
+</body>
+</html>
