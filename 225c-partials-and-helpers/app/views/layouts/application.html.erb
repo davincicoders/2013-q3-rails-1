@@ -14,14 +14,20 @@
       <%= image_tag "logo.png" %>
     </a>
     <ul class='nav nav-tabs'>
+      <li class='pull-right <%= if params[:action] == "users" then "active" end %>'>
+        <a href='/users'>Users</a>
+      </li>
       <li class='pull-right <%= if params[:action] == "form2" then "active" end %>'>
         <a href='/form2'>Form 2</a>
       </li>
       <li class='pull-right <%= if params[:action] == "form1" then "active" end %>'>
         <a href='/form1'>Form 1</a>
       </li>
-      <li class='pull-right <%= if params[:action] == "buttons" then "active" end %>'>
-        <a href='/buttons'>Buttons</a>
+      <li class='pull-right <%= if params[:action] == "calendar" then "active" end %>'>
+        <a href='/calendar'>Calendar</a>
+      </li>
+      <li class='pull-right <%= if params[:action] == "symbols" then "active" end %>'>
+        <a href='/symbols'>Symbols</a>
       </li>
     </ul>
   </nav>

@@ -1,0 +1,13 @@
+<% @from_date.step(@to_date, 7) do |beginning_of_week| %>
+  <% ending_of_week = beginning_of_week.advance(days: 6) %>
+  <% beginning_of_week.step(ending_of_week, 1) do |date| %>
+    <% if date <= @to_date %>
+      <div class="day">
+        <div class="day-number">
+          <%= date.strftime("%-d") %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <br clear='all'>
+<% end %>
