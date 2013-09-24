@@ -4,6 +4,7 @@
     <th>ID</th>
     <th>First name</th>
     <th>Last name</th>
+    <th>Full name</th>
     <th>Birth date</th>
     <th>Age</th>
   </tr>
@@ -13,8 +14,9 @@
       <td><%= person.id %></td>
       <td><%= person.first_name %></td>
       <td><%= person.last_name %></td>
+      <td><%= person.first_name %> <%= person.last_name %></td>
       <td><%= person.birth_date.strftime('%Y-%m-%d') %></td>
-      <td><%= person.age %></td>
+      <td><%= (Date.today - person.birth_date).to_i / 365 %></td>
     </tr>
   <% end %>
 
