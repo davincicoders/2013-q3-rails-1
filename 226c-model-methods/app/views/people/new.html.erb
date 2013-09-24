@@ -1,0 +1,35 @@
+<%= form_tag create_person_path do %>
+
+  <%= error_messages_for @person %>
+
+  <div class='form-group
+    <%= @person.errors[:first_name] != [] && "has-error" %>'>
+    <%= label_tag :first_name,
+      "First name #{@person.errors[:first_name].join(", ")}",
+      class: "control-label" %>
+    <%= text_field_tag :first_name, @person.first_name, class: "form-control" %>
+  </div>
+  
+  <div class='form-group
+      <%= @person.errors[:last_name] != [] && "has-error" %>'>
+    <%= label_tag :last_name,
+      "Last name #{@person.errors[:last_name].join(", ")}",
+      class: "control-label" %>
+    <%= text_field_tag :last_name, @person.last_name, class: "form-control" %>
+  </div>
+  
+  <div class='form-group
+      <%= @person.errors[:birth_date] != [] && "has-error" %>'>
+    <%= label_tag :birth_date,
+      "Birth date #{@person.errors[:birth_date].join(", ")}",
+      class: "control-label" %>
+    <div class="form-control">
+      <%= select_date @person.birth_date, prefix: "birth_date", prompt: true %>
+    </div>
+  </div>
+  
+  <div class='form-group'>
+    <%= submit_tag "Submit", class: "btn btn-primary btn-lg btn-block" %>
+  </div>
+
+<% end %>
