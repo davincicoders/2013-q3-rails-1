@@ -5,8 +5,10 @@ class Person < ActiveRecord::Base
   validate :birth_date_not_future
 
   def birth_date_not_future
-    if self.birth_date > Date.today
-      errors.add :birth_date, "can't be in the future"
+    if self.birth_date != nil
+      if self.birth_date > Date.today
+        errors.add :birth_date, "can't be in the future"
+      end
     end
   end
 
