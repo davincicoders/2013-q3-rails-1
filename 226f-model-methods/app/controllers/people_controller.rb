@@ -1,15 +1,15 @@
-class MainController < ApplicationController
+class PeopleController < ApplicationController
 
   def index
     @people = Person.order(:id).all
   end
 
-  def new_person
+  def new
     @person = Person.new
     render :new and return
   end
 
-  def create_person
+  def create
     person_params = params.permit(:first_name, :last_name)
     year  = params[:birth_date][:year ].to_i
     month = params[:birth_date][:month].to_i
