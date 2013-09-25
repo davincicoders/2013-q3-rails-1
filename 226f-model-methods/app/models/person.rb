@@ -13,7 +13,13 @@ class Person < ActiveRecord::Base
   end
 
   def age
-    (Date.today - self.birth_date).to_i / 365
+    birthday_this_year =
+      Date.new(Date.today.year, self.birth_date.month, self.birth_date.day)
+    if Date.today >= birthday_this_year
+      Date.today.year - self.birth_date.year
+    else
+      Date.today.year - self.birth_date.year - 1
+    end
   end
 
   def full_name

@@ -16,7 +16,15 @@
       <td><%= person.last_name %></td>
       <td><%= person.first_name %> <%= person.last_name %></td>
       <td><%= person.birth_date.strftime('%Y-%m-%d') %></td>
-      <td><%= (Date.today - person.birth_date).to_i / 365 %></td>
+      <td><%=
+        birthday_this_year = Date.new(
+          Date.today.year, person.birth_date.month, person.birth_date.day) 
+        if Date.today >= birthday_this_year
+          Date.today.year - person.birth_date.year
+        else
+          Date.today.year - person.birth_date.year - 1
+        end %>
+      </td>
     </tr>
   <% end %>
 
